@@ -1,0 +1,14 @@
+{
+  "name": "hermes-gensyn-delphi-bridge",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Local Node bridge for the hermes-gensyn-delphi plugin. Not published.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/bridge.test.mjs"
+  },
+  "dependencies": {
+    "@gensyn-ai/gensyn-delphi-sdk": "2.1.0"
+  }
+}

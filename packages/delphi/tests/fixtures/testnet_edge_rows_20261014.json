@@ -1,0 +1,804 @@
+{
+ "recorded_at": "2026-10-14T00:56:53.322Z",
+ "failed": [
+  {
+   "id": "0xb50fd9ad9a0cbaa4a17735fbe040d46aa3a9e6bb",
+   "appMarketId": "a6f4ce06-743d-4e26-a121-f39521b2bc27",
+   "deployer": "0x4ac30354d99b67e508d6d50089e3c9ff0b6effa9",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x4aC30354d99B67e508D6D50089E3c9FF0B6effA9%2312850dfca84561952ef61abdb50ef770efee651ab159d6cf7b0d92556286dd4b.json",
+   "metadataUriContentHash": "0x12850dfca84561952ef61abdb50ef770efee651ab159d6cf7b0d92556286dd4b",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-07-25T08:10:54Z",
+   "settledAt": null,
+   "fetchedAt": "2026-07-25T08:10:54Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will ETH/USD reach $3,000 during the 24-hour window ending Jul 28, 2026, 08:09 UTC?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if the ETH/USD spot price reaches or exceeds $3,000.00 at any point during the 24-hour window ending at the market's settlement time, as reported by Coinbase (ETH-USD).\n- \"No\": Wins if the ETH/USD spot price remains strictly below $3,000.00 for the entire 24-hour window ending at the market's settlement time, as reported by Coinbase (ETH-USD).\n\nClarifications:\n- The 24-hour window is the period beginning 24 hours before the market's settlement time and ending at the market's settlement time (UTC).\n- \"Reaches $3,000.00\" means any recorded trade price of $3,000.00 or higher on Coinbase (ETH-USD) during the window qualifies; a momentary touch is sufficient."
+    },
+    "initial_liquidity": "1000000000",
+    "initial_pool": "707106782",
+    "refund": "292893218",
+    "market_creation_fee": "2000000",
+    "version": "1.1.0",
+    "data_sources": [
+     "Coinbase Advanced Trade ETH-USD",
+     "CoinMarketCap Ethereum"
+    ]
+   },
+   "category": "crypto",
+   "verifiable": true,
+   "dataSources": [
+    "Coinbase Advanced Trade ETH-USD",
+    "CoinMarketCap Ethereum"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-07-28T08:09:00Z",
+   "resolvesAt": "2026-07-26T08:09:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/a6f4ce06-743d-4e26-a121-f39521b2bc27"
+  },
+  {
+   "id": "0xe0bbbae8b62479c543071486fca591604b13b4d8",
+   "appMarketId": "b343ef07-5fce-4e41-98e7-5589bcbd3a28",
+   "deployer": "0x917e9cea54bbc2f38872b3ea430f41f1367a892c",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x917E9CEa54BbC2F38872B3eA430F41f1367A892C%2336bd2bcba8ce2ef451b2580592c4a8eeaef3da2b2171d9dc5815643fcbb99dee%23f197177d-fa87-4a29-a21c-a212b9c311c8.json",
+   "metadataUriContentHash": "0x36bd2bcba8ce2ef451b2580592c4a8eeaef3da2b2171d9dc5815643fcbb99dee",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-08-23T14:22:36Z",
+   "settledAt": null,
+   "fetchedAt": "2026-08-23T14:22:36Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Which model will top the BashArena risk (undetected-sabotage success) rate leaderboard by 2026-08-13?",
+    "outcomes": [
+     "Qwen/Qwen3-30B-A3B-Instruct-2507",
+     "google/gemma-3-27b-it",
+     "zai-org/GLM-4-32B-0414",
+     "tiiuae/Falcon-H1-34B-Instruct",
+     "None of the above (tie or a model not listed)"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Authoritative data source: the Control Arena oracle's resolution packet published at\nhttps://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-13.json\nIt is a JSON document naming the winning outcome, KMS-ECDSA signed (secp256k1) by\n0x24225e64b2d1767aeEa5b018d8d312a2271a94bc.\n\nSettlement criteria:\n1. Fetch the resolution packet at the URL above.\n2. Verify it is well-formed JSON, refers to this market's question and outcomes, and\n   carries an ECDSA signature attributed to 0x24225e64b2d1767aeEa5b018d8d312a2271a94bc.\n3. Return the listed outcome exactly matching the packet's named winner.\n4. If the packet declares a tie or names an unlisted winner, return \"None of the above\n   (tie or a model not listed)\".\n5. Return only the exact outcome label, with no extra text.\n\nDo NOT return a listed outcome if the packet is unreachable, unsigned by that address,\nmalformed, or names no winner."
+    },
+    "initial_liquidity": "100000000",
+    "initial_pool": "44721360",
+    "refund": "55278640",
+    "market_creation_fee": "2000000",
+    "version": "1.2.0",
+    "data_sources": [
+     "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-13.json"
+    ],
+    "settlement_starts": "2026-08-24T05:00:00.000Z"
+   },
+   "category": "tech",
+   "verifiable": true,
+   "dataSources": [
+    "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-13.json"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-08-25T21:00:00Z",
+   "resolvesAt": "2026-08-23T21:00:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/b343ef07-5fce-4e41-98e7-5589bcbd3a28"
+  },
+  {
+   "id": "0x5bde677c68d2678a7a90de32d5bf466bf6709272",
+   "appMarketId": "0cf0c767-a7d1-467d-b10f-a8df17db2c4c",
+   "deployer": "0x6016f8de58a0e37cb9c3ef10d91a109a91883837",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x6016F8DE58A0E37CB9C3EF10D91A109a91883837%230124c3507ddd31343f221366e95e9777fd1ef7e6a87d751ba56521b4f0676f13.json",
+   "metadataUriContentHash": "0x0124c3507ddd31343f221366e95e9777fd1ef7e6a87d751ba56521b4f0676f13",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-07-30T09:40:30Z",
+   "settledAt": null,
+   "fetchedAt": "2026-07-30T09:40:30Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will $ETH close above $2,100 before August 15, 2026?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if the ETH/USDT spot price on Binance records at least one UTC daily closing price (00:00 UTC close) strictly above $2,100 on any calendar day from market open through August 14, 2026 (inclusive), as reported by Binance.\n- \"No\": Wins if every UTC daily closing price for ETH/USDT on Binance from market open through August 14, 2026 (inclusive) is at or below $2,100, as reported by Binance.\n\nClarifications:\n- \"Close\" refers to the UTC 00:00 daily close price of the ETH/USDT spot pair on Binance (i.e., the last traded price at the end of each UTC calendar day).\n- Intraday highs that do not result in a UTC daily close above $2,100 do not satisfy the \"Yes\" condition."
+    },
+    "initial_liquidity": "100000000",
+    "initial_pool": "70710679",
+    "refund": "29289321",
+    "market_creation_fee": "2000000",
+    "version": "1.1.0",
+    "data_sources": [
+     "Binance ETH/USDT Spot Market",
+     "Binance ETH Price Page",
+     "TradingView ETH/USDT",
+     "CoinGecko Ethereum"
+    ]
+   },
+   "category": "crypto",
+   "verifiable": true,
+   "dataSources": [
+    "Binance ETH/USDT Spot Market",
+    "Binance ETH Price Page",
+    "TradingView ETH/USDT",
+    "CoinGecko Ethereum"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-08-04T09:39:00Z",
+   "resolvesAt": "2026-08-02T09:39:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/0cf0c767-a7d1-467d-b10f-a8df17db2c4c"
+  },
+  {
+   "id": "0xb4cdaf99e3980d1807830e2c96e941961dab5464",
+   "appMarketId": "a85f67b1-1744-4560-96e2-0c463bad386e",
+   "deployer": "0x137379bfb815b81a6c96a6c5e33830b60baae181",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x137379Bfb815b81A6c96a6C5e33830b60bAAe181%232d53f0485e9c50417cb4411225e76a69ac9a76c4e0addf9288788b0a1595d753%235d6d7d80-6afd-468c-8c57-0fbe08234660.json",
+   "metadataUriContentHash": "0x2d53f0485e9c50417cb4411225e76a69ac9a76c4e0addf9288788b0a1595d753",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-08-06T13:31:18Z",
+   "settledAt": null,
+   "fetchedAt": "2026-08-06T13:31:18Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "When gensyn will launch Competition App for the upcoming hackathon",
+    "outcomes": [
+     "12 Aug 2026",
+     "11 Aug 2026",
+     "9 Aug 2026"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"12 Aug 2026\": Wins if Gensyn's official Competition App for the upcoming hackathon is publicly launched on 12 August 2026 UTC, as confirmed by an official Gensyn announcement (blog, docs, or official social channel).\n- \"11 Aug 2026\": Wins if Gensyn's official Competition App for the upcoming hackathon is publicly launched on 11 August 2026 UTC, as confirmed by an official Gensyn announcement (blog, docs, or official social channel).\n- \"9 Aug 2026\": Wins if Gensyn's official Competition App for the upcoming hackathon is publicly launched on 9 August 2026 UTC, as confirmed by an official Gensyn announcement (blog, docs, or official social channel).\n\nClarifications:\n- \"Launch\" means the Competition App is made publicly accessible or announced as live by Gensyn; a soft preview, internal test, or staging deployment does not qualify.\n- If the Competition App is launched on a date not listed among the outcomes (e.g., 10 Aug 2026 or any other date), no outcome wins and the market is unresolvable."
+    },
+    "initial_liquidity": "10000000",
+    "initial_pool": "5773503",
+    "refund": "4226497",
+    "market_creation_fee": "2000000",
+    "version": "1.2.0",
+    "data_sources": [
+     "Gensyn Official Blog",
+     "Gensyn Docs",
+     "Gensyn Twitter/X"
+    ],
+    "settlement_starts": "2026-08-10T02:30:00.000Z"
+   },
+   "category": "crypto",
+   "verifiable": true,
+   "dataSources": [
+    "Gensyn Official Blog",
+    "Gensyn Docs",
+    "Gensyn Twitter/X"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-08-11T18:30:00Z",
+   "resolvesAt": "2026-08-09T18:30:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/a85f67b1-1744-4560-96e2-0c463bad386e"
+  },
+  {
+   "id": "0x440801fc4c3fe2b4d53599b502182176f2f70136",
+   "appMarketId": "9171c64f-4954-4615-ad3b-dd9f80e15333",
+   "deployer": "0x3a6eeccc854313c51e77fdd7c44348a3770b6958",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x3a6EeCCC854313C51E77fdd7C44348A3770B6958%23f1a4b46600f47a4c6e4ea09228dedeaa29f5e7f74415c7df4dca24d9dc4a97d9.json",
+   "metadataUriContentHash": "0xf1a4b46600f47a4c6e4ea09228dedeaa29f5e7f74415c7df4dca24d9dc4a97d9",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-07-31T22:30:32Z",
+   "settledAt": null,
+   "fetchedAt": "2026-07-31T22:30:32Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Which will have the larger absolute price change over the next 30 minutes?",
+    "outcomes": [
+     "BTC",
+     "ETH"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"BTC\": Wins if the absolute price change of BTC-USD on Coinbase over the 30-minute market window (from market open to the market's settlement time) is strictly greater than the absolute price change of ETH-USD on Coinbase over the same window, where absolute price change is defined as |price at settlement time − price at market open| in USD.\n- \"ETH\": Wins if the absolute price change of ETH-USD on Coinbase over the 30-minute market window (from market open to the market's settlement time) is strictly greater than the absolute price change of BTC-USD on Coinbase over the same window, where absolute price change is defined as |price at settlement time − price at market open| in USD.\n\nClarifications:\n- Prices used are the Coinbase spot prices for BTC-USD and ETH-USD recorded at the moment of market open and at the market's settlement time.\n- If the absolute price changes are exactly equal, neither outcome wins on price alone; the market is treated as unresolvable."
+    },
+    "initial_liquidity": "10000000",
+    "initial_pool": "7071068",
+    "refund": "2928932",
+    "market_creation_fee": "2000000",
+    "version": "1.1.0",
+    "data_sources": [
+     "Coinbase"
+    ]
+   },
+   "category": "crypto",
+   "verifiable": true,
+   "dataSources": [
+    "Coinbase"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-08-03T22:27:00Z",
+   "resolvesAt": "2026-08-01T22:27:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/9171c64f-4954-4615-ad3b-dd9f80e15333"
+  },
+  {
+   "id": "0x1b02e914e4ad43b3a1fb8cc96102804d8e37a891",
+   "appMarketId": "464b18ef-b3dc-42b7-b184-e8c441f0bd63",
+   "deployer": "0xba8918761ce99b58c4ea6c17f66eb959bc6abf51",
+   "implementation": "0xd32aa3d19c7f100d79bf211afefad283478b12f1",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xBa8918761CE99B58C4Ea6C17F66Eb959bc6aBf51%231ee83f2bfda75658d75601fd7aac7a71149ce605ac719fce1fb4aa045bcbde11%2337ac5951-dfbd-4748-916f-3ff5b298e814.json",
+   "metadataUriContentHash": "0x1ee83f2bfda75658d75601fd7aac7a71149ce605ac719fce1fb4aa045bcbde11",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-09-25T03:45:10Z",
+   "settledAt": null,
+   "fetchedAt": "2026-09-25T03:45:10Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will the Seahawks win the Super Bowl?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if the Seattle Seahawks are declared the official champions of Super Bowl LXI (the 2026 NFL season championship game, scheduled for February 14, 2027).\n- \"No\": Wins if the Seattle Seahawks do not win Super Bowl LXI — including if they are eliminated before the game, lose in the game, or the game is cancelled with no champion declared."
+    },
+    "market_creation_fee": "2000000",
+    "version": "2.0.0",
+    "data_sources": [
+     "NFL Official Website",
+     "ESPN",
+     "Associated Press"
+    ],
+    "settlement_starts": "2026-09-26T11:44:00.000Z",
+    "mechanism_type": "lmsr"
+   },
+   "category": "sports",
+   "verifiable": true,
+   "dataSources": [
+    "NFL Official Website",
+    "ESPN",
+    "Associated Press"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-09-28T03:44:00Z",
+   "resolvesAt": "2026-09-26T03:44:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/464b18ef-b3dc-42b7-b184-e8c441f0bd63"
+  },
+  {
+   "id": "0x05e60ac6abfa6115821e279444c27e43bf3994db",
+   "appMarketId": "09569986-56be-4835-b115-a83d1b50bf16",
+   "deployer": "0xba8918761ce99b58c4ea6c17f66eb959bc6abf51",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xBa8918761CE99B58C4Ea6C17F66Eb959bc6aBf51%2358d8e8e85042f6e5be66cf034c52d27a11962fd64fca15dc2226b1750824abf8%23ba0dd1ad-5223-46f6-b037-d2a90b82a48f.json",
+   "metadataUriContentHash": "0x58d8e8e85042f6e5be66cf034c52d27a11962fd64fca15dc2226b1750824abf8",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-08-03T23:05:52Z",
+   "settledAt": null,
+   "fetchedAt": "2026-08-03T23:05:52Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will Mexico win the next world cup?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if Mexico is declared the champion of the 2026 FIFA World Cup (the next World Cup after market creation), as officially confirmed by FIFA.\n- \"No\": Wins if Mexico does not win the 2026 FIFA World Cup — i.e., Mexico is eliminated before the final, loses the final, or does not participate in the tournament."
+    },
+    "initial_liquidity": "1000000",
+    "initial_pool": "707107",
+    "refund": "292893",
+    "market_creation_fee": "2000000",
+    "version": "1.1.0",
+    "data_sources": [
+     "FIFA Official Website",
+     "Associated Press"
+    ]
+   },
+   "category": "sports",
+   "verifiable": true,
+   "dataSources": [
+    "FIFA Official Website",
+    "Associated Press"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-08-05T23:10:00Z",
+   "resolvesAt": "2026-08-03T23:10:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/09569986-56be-4835-b115-a83d1b50bf16"
+  },
+  {
+   "id": "0x3fe8820092529147c90a41ccb966b47a9f557c9a",
+   "appMarketId": "98ab8324-f163-4202-9a51-7cfcfdc33e15",
+   "deployer": "0x4ac30354d99b67e508d6d50089e3c9ff0b6effa9",
+   "implementation": "0xd32aa3d19c7f100d79bf211afefad283478b12f1",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x4aC30354d99B67e508D6D50089E3c9FF0B6effA9%238355ab22581b26d4481af8a0282dce4eb20bae938acad62d5974d8794f63d2d6%231f3cdf88-e90f-44bf-894c-8a8ac64ab251.json",
+   "metadataUriContentHash": "0x8355ab22581b26d4481af8a0282dce4eb20bae938acad62d5974d8794f63d2d6",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-10-12T08:44:16Z",
+   "settledAt": null,
+   "fetchedAt": "2026-10-12T08:44:16Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will ETH/USD reach $5,000 at any point in the 24 hours ending Oct 15, 2026, 08:42 UTC?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if the ETH-USD price on Coinbase reaches or exceeds $5,000.00 USD at any point during the 24-hour window from Oct 14, 2026, 08:42 UTC to Oct 15, 2026, 08:42 UTC.\n- \"No\": Wins if the ETH-USD price on Coinbase remains below $5,000.00 USD throughout the entire 24-hour window from Oct 14, 2026, 08:42 UTC to Oct 15, 2026, 08:42 UTC.\n\nClarifications:\n- Any single trade or last price at or above $5,000.00 USD on Coinbase (ETH-USD) within that window satisfies the \"Yes\" condition."
+    },
+    "market_creation_fee": "2000000",
+    "version": "2.0.0",
+    "data_sources": [
+     "Coinbase",
+     "Binance",
+     "CoinGecko"
+    ],
+    "settlement_starts": "2026-10-13T16:42:00.000Z",
+    "mechanism_type": "lmsr"
+   },
+   "category": "crypto",
+   "verifiable": true,
+   "dataSources": [
+    "Coinbase",
+    "Binance",
+    "CoinGecko"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-10-15T08:42:00Z",
+   "resolvesAt": "2026-10-13T08:42:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/98ab8324-f163-4202-9a51-7cfcfdc33e15"
+  }
+ ],
+ "nonstandard_category": [
+  {
+   "id": "0xec20dfb07c07ca8b46a0ecdc7a6fda607825dee5",
+   "appMarketId": "2f9a7493-49a9-4259-9fff-467d33f8c9fc",
+   "deployer": "0x917e9cea54bbc2f38872b3ea430f41f1367a892c",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x917E9CEa54BbC2F38872B3eA430F41f1367A892C%232dc3e622096c987607e40efa6a092d49b96f4dbf4cf91c9cb8d7b237bb4b5237%23386d6ae7-a810-440f-9eba-e7ad0cd09e9e.json",
+   "metadataUriContentHash": "0x2dc3e622096c987607e40efa6a092d49b96f4dbf4cf91c9cb8d7b237bb4b5237",
+   "status": "settled",
+   "winningOutcomeIdx": "4",
+   "createdAt": "2026-09-03T16:51:10Z",
+   "settledAt": "2026-09-10T01:08:50Z",
+   "fetchedAt": "2026-09-03T16:51:10Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Which model is most misaligned on BashArena? (highest undetected-sabotage risk rate, resolving 2026-09-09)",
+    "outcomes": [
+     "Qwen/Qwen3-30B-A3B-Instruct-2507",
+     "google/gemma-3-27b-it",
+     "zai-org/GLM-4-32B-0414",
+     "tiiuae/Falcon-H1-34B-Instruct",
+     "None of the above (tie or a model not listed)"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolve using the declared data source: the Control Arena oracle's resolution packet at\nhttps://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/flagship_basharena_risk/2026-09-09.json\n\nBackground: the winner is the listed model with the highest BashArena risk (undetected-sabotage success) rate over the daily automated attack evaluations run during this market's window, with per-model detection thresholds locked before the window (Mistral-Small monitor). Daily signed reveals are published under https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-reveals/flagship-basharena-2026-09/\n\nResolution criteria:\n- Resolve to the outcome matching the top-level \"winner\" field in the oracle packet, exactly as written.\n- If the \"winner\" value is not one of the listed outcomes, or the packet declares a tie, resolve to \"None of the above (tie or a model not listed)\".\n- The required signer address is 0xffd2a034684F0C32476c5FFeDFC514E435B8d924."
+    },
+    "initial_liquidity": "150000000",
+    "initial_pool": "67082040",
+    "refund": "82917960",
+    "market_creation_fee": "2000000",
+    "version": "1.2.0",
+    "data_sources": [
+     "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/flagship_basharena_risk/2026-09-09.json"
+    ],
+    "settlement_starts": "2026-09-10T01:00:00.000Z"
+   },
+   "category": "tech",
+   "verifiable": true,
+   "dataSources": [
+    "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/flagship_basharena_risk/2026-09-09.json"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-09-11T17:00:00Z",
+   "resolvesAt": "2026-09-09T17:00:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/2f9a7493-49a9-4259-9fff-467d33f8c9fc"
+  },
+  {
+   "id": "0xb67852bd92169e643f9f704bc0a21dcad767eea7",
+   "appMarketId": "c8a533bc-2f71-4f6f-a6ee-8fe1e20d2550",
+   "deployer": "0x917e9cea54bbc2f38872b3ea430f41f1367a892c",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x917E9CEa54BbC2F38872B3eA430F41f1367A892C%23dfefb80717cf76d044dc76e9d11aa22e5df4e3e95966fcb7427a5eab47b33a39%23383d84ae-e890-4798-9fcb-dd2b379cf101.json",
+   "metadataUriContentHash": "0xdfefb80717cf76d044dc76e9d11aa22e5df4e3e95966fcb7427a5eab47b33a39",
+   "status": "settled",
+   "winningOutcomeIdx": "4",
+   "createdAt": "2026-08-30T19:07:30Z",
+   "settledAt": "2026-09-01T02:21:00Z",
+   "fetchedAt": "2026-08-30T19:07:30Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Which model will top the BashArena risk (undetected-sabotage success) rate leaderboard by 2026-08-24?",
+    "outcomes": [
+     "Qwen/Qwen3-30B-A3B-Instruct-2507",
+     "google/gemma-3-27b-it",
+     "zai-org/GLM-4-32B-0414",
+     "tiiuae/Falcon-H1-34B-Instruct",
+     "None of the above (tie)"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolve by reading the Control Arena oracle's resolution packet at https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-24.json.\n\nResolution criteria:\n- Resolve as the outcome that matches the value of the top-level \"winner\" field in the verified JSON document.\n- If the \"winner\" value is not one of the four listed model outcomes, or if the packet declares a tie among multiple models, resolve as \"None of the above (tie)\"."
+    },
+    "initial_liquidity": "10000000",
+    "initial_pool": "4472136",
+    "refund": "5527864",
+    "market_creation_fee": "2000000",
+    "version": "1.2.0",
+    "data_sources": [
+     "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-24.json"
+    ],
+    "settlement_starts": "2026-09-01T02:10:00.000Z"
+   },
+   "category": "tech",
+   "verifiable": true,
+   "dataSources": [
+    "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-24.json"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-09-02T18:10:00Z",
+   "resolvesAt": "2026-08-31T18:10:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/c8a533bc-2f71-4f6f-a6ee-8fe1e20d2550"
+  },
+  {
+   "id": "0x8e02bb572e5035c9c100a2ba6e14e2da2d972b53",
+   "appMarketId": "8475108e-5b25-4d5a-a267-23bf8bc98e97",
+   "deployer": "0x917e9cea54bbc2f38872b3ea430f41f1367a892c",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x917E9CEa54BbC2F38872B3eA430F41f1367A892C%23dca3a02573a28cf60b2cbbda8a8f341a2686bc7311130277fb9257ea637290b8%23638bf377-7b3e-4ba3-b181-577ac6ad3101.json",
+   "metadataUriContentHash": "0xdca3a02573a28cf60b2cbbda8a8f341a2686bc7311130277fb9257ea637290b8",
+   "status": "settled",
+   "winningOutcomeIdx": "4",
+   "createdAt": "2026-09-12T22:34:52Z",
+   "settledAt": "2026-09-14T01:08:52Z",
+   "fetchedAt": "2026-09-12T22:34:52Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Which model is most misaligned on BashArena? (highest undetected-sabotage risk rate, 2-day test window)",
+    "outcomes": [
+     "Qwen/Qwen3-30B-A3B-Instruct-2507",
+     "google/gemma-3-27b-it",
+     "zai-org/GLM-4-32B-0414",
+     "tiiuae/Falcon-H1-34B-Instruct",
+     "None of the above (tie or a model not listed)"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolve using the declared data source: the Control Arena oracle's resolution packet at\nhttps://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/test_basharena_risk_2d/2026-09-13.json\n\nBackground: the winner is the listed model with the highest BashArena risk (undetected-sabotage success) rate over the automated attack evaluations run during this market's window (evaluation cycles every few hours across the bash_arena, apps, iac_fast and shade_arena settings; trusted monitor Mistral-Small-3.1-24B; a fixed detection threshold of 0.5 on the monitor's 0-1 suspicion score is used for this test window and is recorded in every signed packet). Signed per-cycle reveals are published under https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-reveals/test-basharena-2d-2026-09-11/\n\nSteps:\n1. Fetch the JSON document at that URL.\n2. Verify the signature cryptographically: compute keccak256 over the exact UTF-8 bytes\n   of the document's \"canonical_payload_utf8\" field; \"signature_eth_hex\" is a standard\n   65-byte Ethereum signature (r||s||v, v in {27,28}, no EIP-191 prefix); recovering the\n   signer via ecrecover(digest, signature) must yield the document's \"signer_address\",\n   which must be 0xffd2a034684F0C32476c5FFeDFC514E435B8d924. If cryptographic recovery\n   is not possible in your environment, verifying that the \"signer_address\" field equals\n   that address is an acceptable fallback.\n3. Return the value of the document's top-level \"winner\" field, exactly as written.\n4. If that value is not one of the listed outcomes, or the packet declares a tie, return\n   \"None of the above (tie or a model not listed)\".\n5. Return only the exact outcome label, no extra text.\n\nTreat the evidence as insufficient (do not resolve) only if the URL is unreachable, the\ndocument is not valid JSON, or signature recovery succeeds but yields a DIFFERENT address\nthan the stated signer_address."
+    },
+    "market_creation_fee": "2000000",
+    "version": "2.0.0",
+    "data_sources": [
+     "BashArena Official Leaderboard / Results Page",
+     "BashArena arXiv Paper (Kaufman, Lucassen, Tracy 2025)",
+     "MonitoringBench (BashArena-based evaluation)",
+     "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/test_basharena_risk_2d/2026-09-13.json"
+    ],
+    "settlement_starts": "2026-09-14T01:00:00.000Z",
+    "mechanism_type": "dpm",
+    "initial_liquidity": "1000000",
+    "refund": "552786"
+   },
+   "category": "tech",
+   "verifiable": true,
+   "dataSources": [
+    "BashArena Official Leaderboard / Results Page",
+    "BashArena arXiv Paper (Kaufman, Lucassen, Tracy 2025)",
+    "MonitoringBench (BashArena-based evaluation)",
+    "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/test_basharena_risk_2d/2026-09-13.json"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-09-15T17:00:00Z",
+   "resolvesAt": "2026-09-13T17:00:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/8475108e-5b25-4d5a-a267-23bf8bc98e97"
+  },
+  {
+   "id": "0x456af091647d545c3e6e06cfa5691787023c6cf0",
+   "appMarketId": "d240bbd4-fb14-496c-bf48-0b0b13ec0e23",
+   "deployer": "0xe041ad9594c9941e99421fa1aedc9db50b40e721",
+   "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xe041Ad9594c9941E99421Fa1aeDC9db50b40E721%238676204b04c8953205b67076dbe777db99cf8c938c7cf907120298e5a392aa55.json",
+   "metadataUriContentHash": "0x8676204b04c8953205b67076dbe777db99cf8c938c7cf907120298e5a392aa55",
+   "status": "settled",
+   "winningOutcomeIdx": "0",
+   "createdAt": "2026-07-03T09:28:26Z",
+   "settledAt": "2026-07-03T09:53:52Z",
+   "fetchedAt": "2026-07-03T09:28:26Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Test A vs B?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Claude Opus 4.8",
+     "prompt_context": "Resolve the market question: \"Test A vs B?\"\n\nValid outcomes:\nYes\nNo\n\nUse the declared data sources first. If sources conflict, prefer the primary official source. If the declared sources are unavailable or do not contain enough evidence by the market's settlement time, do not guess; apply the evidence-insufficiency rule below.\n\nSettlement criteria:\n1. Evaluate only events and evidence up to the market's settlement time.\n2. Choose exactly one valid outcome.\n3. Return only the exact outcome label, with no extra text.\n4. If no verified result is available under the declared sources by the market's settlement time, do not return any listed outcome; apply the evidence-insufficiency rule below.\n\nEvidence-insufficiency rule:\nDo not return any listed outcome if any of the following conditions apply: (a) the event or comparison described in the question has not taken place by the market's settlement time; (b) the event has been postponed or cancelled with no conclusive result declared before the market's settlement time; (c) no declared data source contains a verified, final determination of whether the answer to the question is \"Yes\" or \"No\"; or (d) the result is disputed and no official ruling or authoritative determination has been issued by the market's settlement time. In any of these cases, the market cannot be resolved from the declared sources."
+    },
+    "initial_liquidity": "1000000",
+    "initial_pool": "707107",
+    "refund": "292893",
+    "market_creation_fee": "1000000",
+    "version": "1.1.0",
+    "data_sources": [
+     "https://google.com"
+    ]
+   },
+   "category": "tech",
+   "verifiable": false,
+   "dataSources": [
+    "https://google.com"
+   ],
+   "proof": "Test A",
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-07-04T09:32:00Z",
+   "resolvesAt": "2026-07-03T09:32:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/d240bbd4-fb14-496c-bf48-0b0b13ec0e23"
+  },
+  {
+   "id": "0xe0bbbae8b62479c543071486fca591604b13b4d8",
+   "appMarketId": "b343ef07-5fce-4e41-98e7-5589bcbd3a28",
+   "deployer": "0x917e9cea54bbc2f38872b3ea430f41f1367a892c",
+   "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x917E9CEa54BbC2F38872B3eA430F41f1367A892C%2336bd2bcba8ce2ef451b2580592c4a8eeaef3da2b2171d9dc5815643fcbb99dee%23f197177d-fa87-4a29-a21c-a212b9c311c8.json",
+   "metadataUriContentHash": "0x36bd2bcba8ce2ef451b2580592c4a8eeaef3da2b2171d9dc5815643fcbb99dee",
+   "status": "failed",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-08-23T14:22:36Z",
+   "settledAt": null,
+   "fetchedAt": "2026-08-23T14:22:36Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Which model will top the BashArena risk (undetected-sabotage success) rate leaderboard by 2026-08-13?",
+    "outcomes": [
+     "Qwen/Qwen3-30B-A3B-Instruct-2507",
+     "google/gemma-3-27b-it",
+     "zai-org/GLM-4-32B-0414",
+     "tiiuae/Falcon-H1-34B-Instruct",
+     "None of the above (tie or a model not listed)"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Authoritative data source: the Control Arena oracle's resolution packet published at\nhttps://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-13.json\nIt is a JSON document naming the winning outcome, KMS-ECDSA signed (secp256k1) by\n0x24225e64b2d1767aeEa5b018d8d312a2271a94bc.\n\nSettlement criteria:\n1. Fetch the resolution packet at the URL above.\n2. Verify it is well-formed JSON, refers to this market's question and outcomes, and\n   carries an ECDSA signature attributed to 0x24225e64b2d1767aeEa5b018d8d312a2271a94bc.\n3. Return the listed outcome exactly matching the packet's named winner.\n4. If the packet declares a tie or names an unlisted winner, return \"None of the above\n   (tie or a model not listed)\".\n5. Return only the exact outcome label, with no extra text.\n\nDo NOT return a listed outcome if the packet is unreachable, unsigned by that address,\nmalformed, or names no winner."
+    },
+    "initial_liquidity": "100000000",
+    "initial_pool": "44721360",
+    "refund": "55278640",
+    "market_creation_fee": "2000000",
+    "version": "1.2.0",
+    "data_sources": [
+     "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-13.json"
+    ],
+    "settlement_starts": "2026-08-24T05:00:00.000Z"
+   },
+   "category": "tech",
+   "verifiable": true,
+   "dataSources": [
+    "https://delphi-oracle-evidence-d3.s3.amazonaws.com/delphi-resolution/risk_leaderboard/2026-08-13.json"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-08-25T21:00:00Z",
+   "resolvesAt": "2026-08-23T21:00:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/b343ef07-5fce-4e41-98e7-5589bcbd3a28"
+  },
+  {
+   "id": "0xcf495ed6fd98452ee8841909f753fc6be7bb4d77",
+   "appMarketId": "ae008742-43aa-407c-936e-3e05b5c22dbb",
+   "deployer": "0xce95cac11a67d0ea8173e1eae295a703944260e7",
+   "implementation": "0xd32aa3d19c7f100d79bf211afefad283478b12f1",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x4aC30354d99B67e508D6D50089E3c9FF0B6effA9%23c3267b4b4ffd16e16689f03903b299abeaa15f9f780f635aac65e74a2d3447ae%2307704f49-549a-4aaf-81dc-8628e2bbb90f.json",
+   "metadataUriContentHash": "0xc3267b4b4ffd16e16689f03903b299abeaa15f9f780f635aac65e74a2d3447ae",
+   "status": "open",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-10-07T07:13:40Z",
+   "settledAt": null,
+   "fetchedAt": "2026-10-07T07:13:40Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will Tesla stock outperform Nvidia stock in 2026?",
+    "outcomes": [
+     "Tesla outperforms Nvidia",
+     "Nvidia outperforms or matches Tesla"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"Tesla outperforms Nvidia\": Wins if TSLA's percentage price return is strictly greater than NVDA's percentage price return over the measurement window.\n- \"Nvidia outperforms or matches Tesla\": Wins if NVDA's percentage price return is greater than or equal to TSLA's percentage price return over the measurement window.\n\nClarifications:\n- Measurement window: each stock's percentage price return is calculated from its Nasdaq official closing price strictly after 2025-12-31T18:30:00Z (the first available regular-session closing price on or after that timestamp) to its Nasdaq official closing price at or before 2026-12-31T18:30:00Z (the last available regular-session closing price at or before that timestamp). Percentage return = (ending price − starting price) / starting price × 100. Dividends and splits are excluded; unadjusted closing prices are used."
+    },
+    "market_creation_fee": "2000000",
+    "version": "2.0.0",
+    "data_sources": [
+     "https://www.nasdaq.com",
+     "https://www.cnbc.com",
+     "https://finance.yahoo.com/quote/TSLA/",
+     "https://finance.yahoo.com/quote/NVDA/"
+    ],
+    "settlement_starts": "2027-01-01T02:30:00.000Z",
+    "mechanism_type": "lmsr"
+   },
+   "category": "finance",
+   "verifiable": true,
+   "dataSources": [
+    "https://www.nasdaq.com",
+    "https://www.cnbc.com",
+    "https://finance.yahoo.com/quote/TSLA/",
+    "https://finance.yahoo.com/quote/NVDA/"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2027-01-02T18:30:00Z",
+   "resolvesAt": "2026-12-31T18:30:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/ae008742-43aa-407c-936e-3e05b5c22dbb"
+  },
+  {
+   "id": "0x60489e7c905006e1cb592994b9b61f43aa1774c0",
+   "appMarketId": "8de84fc3-f24a-4b06-9319-52d5939bd4c1",
+   "deployer": "0xce95cac11a67d0ea8173e1eae295a703944260e7",
+   "implementation": "0xd32aa3d19c7f100d79bf211afefad283478b12f1",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x4aC30354d99B67e508D6D50089E3c9FF0B6effA9%23a3b9f4d9006f97c8ca3a6339e42dbb2df8da2c674796d500c2ca36696d1ddd86%23cf0af8d5-ba65-4328-b4af-6392e26860f3.json",
+   "metadataUriContentHash": "0xa3b9f4d9006f97c8ca3a6339e42dbb2df8da2c674796d500c2ca36696d1ddd86",
+   "status": "open",
+   "winningOutcomeIdx": null,
+   "createdAt": "2026-10-13T05:55:38Z",
+   "settledAt": null,
+   "fetchedAt": "2026-10-13T05:55:38Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will Tokyo's high temperature top NYC's high temperature on Oct 14, 2026?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Qwen3 32B Verifiable (via REE)",
+     "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if Tokyo's official daily high temperature on Oct 14, 2026 (local date, JST) is strictly greater than New York City's official daily high temperature on Oct 14, 2026 (local date, ET), where both highs are recorded strictly after 2026-10-13T05:53:57.867Z and the comparison is evaluated at or before 2026-10-15T02:30:00.000Z.\n- \"No\": Wins if Tokyo's official daily high temperature on Oct 14, 2026 (local date, JST) is less than or equal to New York City's official daily high temperature on Oct 14, 2026 (local date, ET), where both highs are recorded strictly after 2026-10-13T05:53:57.867Z and the comparison is evaluated at or before 2026-10-15T02:30:00.000Z.\n\nClarifications:\n- \"Daily high temperature\" means the maximum observed temperature recorded for the full local calendar day of Oct 14, 2026 at each city's primary official weather station (Tokyo: Chiyoda/Otemachi; NYC: Central Park / JFK / KLGA as reported in official summaries), in degrees Celsius or Fahrenheit — units must be consistent when comparing.\n- If one or both cities' full-day highs are not yet finalized by 2026-10-15T02:30:00.000Z, use the highest observed temperature recorded for that city's local Oct 14 up to that point."
+    },
+    "market_creation_fee": "2000000",
+    "version": "2.0.0",
+    "data_sources": [
+     "https://www.wunderground.com/history/daily/jp/tokyo",
+     "https://www.wunderground.com/history/daily/us/ny/new-york-city",
+     "https://www.jma.go.jp/jma/indexe.html",
+     "https://www.weather.gov/okx/"
+    ],
+    "settlement_starts": "2026-10-15T02:30:00.000Z",
+    "mechanism_type": "lmsr"
+   },
+   "category": "weather",
+   "verifiable": true,
+   "dataSources": [
+    "https://www.wunderground.com/history/daily/jp/tokyo",
+    "https://www.wunderground.com/history/daily/us/ny/new-york-city",
+    "https://www.jma.go.jp/jma/indexe.html",
+    "https://www.weather.gov/okx/"
+   ],
+   "proof": null,
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-10-16T18:30:00Z",
+   "resolvesAt": "2026-10-14T18:30:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/8de84fc3-f24a-4b06-9319-52d5939bd4c1"
+  }
+ ],
+ "structured_proof": [
+  {
+   "id": "0xd2b62af62d1766d40bd89a4db910a2682e186a56",
+   "appMarketId": "9e6c948b-0114-4c60-b179-901f6eba90f8",
+   "deployer": "0x0b2f922c462414bb8863214ffa71a971755e9834",
+   "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x0b2f922c462414bb8863214FFa71a971755E9834%23ba99416adbc75074e2e3acbcf428f2b1c088bb0776bce1be3d9e461f7f63e752.json",
+   "metadataUriContentHash": "0xba99416adbc75074e2e3acbcf428f2b1c088bb0776bce1be3d9e461f7f63e752",
+   "status": "settled",
+   "winningOutcomeIdx": "0",
+   "createdAt": "2026-04-17T09:32:46Z",
+   "settledAt": "2026-04-20T10:04:52Z",
+   "fetchedAt": "2026-04-17T09:32:46Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Who will win between Manchester City vs Arsenal in the Premier League on April 19, 2026?",
+    "outcomes": [
+     "Manchester City",
+     "Arsenal"
+    ],
+    "model": {
+     "model_identifier": "Claude Opus 4.6",
+     "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION:\nWho will win between Manchester City vs Arsenal in the Premier League on April 19, 2026?\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n\nESPN\n\nSETTLEMENT RULES:\n\nUse the official final result from ESPN as the primary data source.\nInclude extra time and penalties unless otherwise specified.\nIf the match is postponed, canceled, abandoned, or not played, output \"No\".\nOutput \"Manchester City\" if: Manchester City scores more goals than Arsenal in the official final result.\nOutput \"Arsenal\" if: Arsenal scores more goals than Manchester City in the official final result.\nOutput \"No\" if: The match ends in a draw.\n\nVALID OUTCOMES — output exactly one and nothing else:\nManchester City\nArsenal\nNo"
+    },
+    "initial_liquidity": "1000000000",
+    "market_creation_fee": "1000000",
+    "version": "1.0.0"
+   },
+   "category": "sports",
+   "verifiable": false,
+   "dataSources": [
+    "ESPN"
+   ],
+   "proof": "{\n  \"version\": \"1.1.0\",\n  \"ree_version\": \"0.1.0\",\n  \"model\": {\n    \"name\": \"Qwen/Qwen3-1.7B\",\n    \"commit_hash\": \"70d244cc86ccca08cf5af4e1e306ecf908b1ad5e\",\n    \"config_hash\": \"sha256:01a2cd6eaa6ffadcfbf29bf5de383834dde68122b10edc73873d4a06b6758723\"\n  },\n  \"input\": {\n    \"prompt\": \"Who will win between Manchester City vs Arsenal in the Premier League on April 19, 2026?\",\n    \"prompt_hash\": \"sha256:749e756dae16088f6c251c1d4853f7e6ee708a1e1119832c1734897ae4734a59\",\n    \"parameters\": {\n      \"max_new_tokens\": 100,\n      \"temperature\": 1.0,\n      \"top_k\": 50,\n      \"top_p\": 1.0,\n      \"min_p\": null,\n      \"repetition_penalty\": 1.0,\n      \"seed\": 12345,\n      \"operation_set\": \"reproducible\",\n      \"rand_algorithm\": \"default\",\n      \"do_sample\": true,\n      \"eos_token\": 151645,\n      \"short_circuit_length\": null,\n      \"short_circuit_token\": null,\n      \"use_kv_cache\": true,\n      \"pad_token\": 151645,\n      \"vocab_size\": 151936\n    },\n    \"parameters_hash\": \"sha256:0cb9825619e52d0fae55561ec1fb705c9cd1ae71316760c23248c610637fe85c\"\n  },\n  \"output\": {\n    \"tokens_hash\": \"sha256:a8d27e7c3b28c91613f27b11fa0960e2a7f639b6c8740056e9acfdda08bc53ec\",\n    \"token_count\": 100,\n    \"finish_reason\": \"max_length\",\n    \"text_output\": \"Manchester City \"\n  },\n  \"execution\": {\n    \"device_type\": \"cpu\",\n    \"device_name\": \"x86_64\"\n  },\n  \"hashes\": {\n    \"receipt_hash\": \"sha256:252eaee4345b6337e2df9ef011241cff8191ce3359690bbdc2496e7fff6b575a\"\n  }\n}",
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-04-20T15:20:00Z",
+   "resolvesAt": "2026-04-19T15:20:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/9e6c948b-0114-4c60-b179-901f6eba90f8"
+  },
+  {
+   "id": "0xda34528faa07aedf3bd095b15875a5c162ec8a61",
+   "appMarketId": "382b3fe6-2cd4-4a8f-89a2-7c1c22cb5af6",
+   "deployer": "0x0b2f922c462414bb8863214ffa71a971755e9834",
+   "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+   "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x0b2f922c462414bb8863214FFa71a971755E9834%233e4507aa8e9ba1ffe622997d4747cc866ffb5540f9abc1696ce1a56deb1856b0.json",
+   "metadataUriContentHash": "0x3e4507aa8e9ba1ffe622997d4747cc866ffb5540f9abc1696ce1a56deb1856b0",
+   "status": "settled",
+   "winningOutcomeIdx": "1",
+   "createdAt": "2026-04-15T09:15:44Z",
+   "settledAt": "2026-04-15T09:30:22Z",
+   "fetchedAt": "2026-04-15T09:15:44Z",
+   "fetchResponseStatus": "success",
+   "error": null,
+   "metadata": {
+    "question": "Will Bitcoin hit $80,000 before 9:20 AM UTC?",
+    "outcomes": [
+     "Yes",
+     "No"
+    ],
+    "model": {
+     "model_identifier": "Qwen/Qwen3-32B",
+     "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION:\nWill Bitcoin hit $80,000 before 9:20 AM UTC based on the BTC/USD price?\n\nEVIDENCE (REQUIRED):\n<REPLACE THIS WITH REAL DATA BEFORE RUNNING>\nInclude:\n- Asset: Bitcoin (BTC)\n- Price: [exact value]\n- Currency: USD\n- Source: CoinMarketCap\n- Timestamp: [exact UTC time]\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- If the evidence is missing, empty, or still shows placeholder text, output \"No\".\n- Determine whether the BTC/USD price reached $80,000 or higher at any time before 9:20 AM UTC.\n- Output \"Yes\" if: the BTC/USD price is greater than or equal to $80,000 at any time before 9:20 AM UTC.\n- Output \"No\" if: the BTC/USD price never reached $80,000 before 9:20 AM UTC.\n- If the evidence is insufficient to confirm that the price reached $80,000, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+    },
+    "initial_liquidity": "100000000",
+    "version": "1.0.0"
+   },
+   "category": "crypto",
+   "verifiable": true,
+   "dataSources": [
+    "CoinMarketCap"
+   ],
+   "proof": "{\n  \"version\": \"1.1.0\",\n  \"ree_version\": \"0.1.0\",\n  \"model\": {\n    \"name\": \"Qwen/Qwen2.5-3B-Instruct\",\n    \"commit_hash\": \"aa8e72537993ba99e69dfaafa59ed015b17504d1\",\n    \"config_hash\": \"sha256:e17320f4a69b9c60ccb5c49d7861888058f00555cacd7a2c4d2a51fe42b7e4bf\"\n  },\n  \"input\": {\n    \"prompt\": \"You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\\n\\nQUESTION: Will Bitcoin be above $75,000 at 12:40 PM UTC?\\n\\nSETTLEMENT RULES:\\n- Compare the exact price or metric value against the threshold in the question.\\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\\n- Output \\\"Yes\\\" if: [DESCRIBE EXACT CONDITION]\\n- Output \\\"No\\\" if: [DESCRIBE EXACT CONDITION]\\n\\nIf you cannot confidently determine the outcome, output \\\"No\\\".\\n\\nVALID OUTCOMES \\u2014 output exactly one and nothing else:\\nYes\\nNo\",\n    \"prompt_hash\": \"sha256:4a38fcc9b6d4ddbd61c6b9fe08cbe9c9ccd2898f570edae0a8a6da8b936b5f50\",\n    \"parameters\": {\n      \"max_new_tokens\": 50,\n      \"temperature\": 1.0,\n      \"top_k\": 50,\n      \"top_p\": 1.0,\n      \"min_p\": null,\n      \"repetition_penalty\": 1.0,\n      \"seed\": 12345,\n      \"operation_set\": \"reproducible\",\n      \"rand_algorithm\": \"default\",\n      \"do_sample\": true,\n      \"eos_token\": 151645,\n      \"short_circuit_length\": null,\n      \"short_circuit_token\": null,\n      \"use_kv_cache\": true,\n      \"pad_token\": 151645,\n      \"vocab_size\": 151936\n    },\n    \"parameters_hash\": \"sha256:59451ebe671a82c345bc025764ab1d55f1a4ecb1913325e0878708f8b45e6350\"\n  },\n  \"output\": {\n    \"tokens_hash\": \"sha256:9ade7b786afce7642032c4c78af05b6f702c54c8828c4313fb5080548178baa0\",\n    \"token_count\": 50,\n    \"finish_reason\": \"max_length\",\n    \"text_output\": \" No\\n\\nAt 12:40 PM UTC, the exact price of Bitcoin was $75,000. According to the question, the threshold was $75,000, and the rule states \\\"greater than,\"\n  },\n  \"execution\": {\n    \"device_type\": \"cuda\",\n    \"device_name\": \"NVIDIA GeForce RTX 3060 Ti\"\n  },\n  \"hashes\": {\n    \"receipt_hash\": \"sha256:3f1142835fe15a6b167d20c21f99c9505c07556d13095e7e23d0989f879f4e31\"\n  }\n}",
+   "tradingFee": "20000000000000000",
+   "settlesAt": "2026-04-16T09:19:00Z",
+   "resolvesAt": "2026-04-15T09:19:00Z",
+   "marketUrl": "https://testnet.delphi.fyi/market/382b3fe6-2cd4-4a8f-89a2-7c1c22cb5af6"
+  }
+ ]
+}

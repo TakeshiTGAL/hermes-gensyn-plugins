@@ -1,0 +1,12 @@
+[project]
+name = "hermes-gensyn-delphi"
+version = "0.2.0"
+description = "Seven read-only Delphi tools for Hermes Agent"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "TakeshiTGAL" }]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/TakeshiTGAL/hermes-gensyn-plugins"

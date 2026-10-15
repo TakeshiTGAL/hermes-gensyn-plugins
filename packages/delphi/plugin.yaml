@@ -1,0 +1,59 @@
+name: hermes-gensyn-delphi
+version: 0.2.0
+manifest_version: 2
+requires_hermes: ">=0.21.4"
+description: >-
+  Seven read-only tools. Disclosure — API key:
+  delphi-api.gensyn.ai (testnet, competition-testnet)
+  or api.delphi.fyi (mainnet). History: api.goldsky.com, plus one RPC read
+  on gensyn-testnet.g.alchemy.com or gensyn-mainnet.g.alchemy.com to choose
+  the gateway. Quotes and live prices use that RPC without the API key. A
+  fundless in-memory key does not sign or send. Failure
+  text is a fixed sentence. Further encodings are outside this check. Tools
+  default on for every Hermes surface, including gateways, with the owner's
+  key. Disable one with hermes tools. No plugin cron. An outside cron can
+  still call reads. Remove it in the scheduler that created it. 30 requests
+  per 60 seconds. Market, position, and meta reads reserve 1. Trades and
+  settlement reserve 2. Quotes reserve 4. A live edge reserves 3. An argument
+  edge reserves 0. Failures stay spent. No daily cap. Node deadline is 25
+  seconds, not a sandbox. Edges gain learning_summary.
+  packages/delphi/scripts/live_sweep.py is a maintainer script, not a Hermes
+  tool. It reads every current testnet market through the tool entry and
+  deletes its temporary home. No state under
+  <HERMES_HOME>/plugin-data/hermes-gensyn-delphi. Linux and macOS only.
+author: TakeshiTGAL
+license: MIT
+platforms:
+  - linux
+  - macos
+provides_tools:
+  - delphi_list_markets
+  - delphi_get_market
+  - delphi_get_positions
+  - delphi_query_subgraph
+  - delphi_compute_edge
+  - delphi_quote_buy
+  - delphi_quote_sell
+provides_hooks:
+  - transform_tool_result
+requires_env:
+  - name: DELPHI_API_ACCESS_KEY
+    description: >-
+      Read API key. Required for markets, positions, and live edge. Not for quotes.
+    secret: true
+    required: false
+  - name: DELPHI_NETWORK
+    description: "testnet, mainnet, or competition-testnet; default testnet."
+    required: false
+  - name: DELPHI_WALLET_ADDRESS
+    description: "Optional public address for position reads. Not a secret."
+    required: false
+config_schema:
+  network:
+    type: str
+    default: "testnet"
+    description: "Used when DELPHI_NETWORK is unset."
+  wallet_address:
+    type: str
+    default: ""
+    description: "Optional public address used when the tool argument is absent."

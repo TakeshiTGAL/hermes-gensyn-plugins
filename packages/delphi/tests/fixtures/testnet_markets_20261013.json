@@ -1,0 +1,2365 @@
+{
+ "recorded_at": "2026-10-13T07:15:30.134Z",
+ "network": "testnet",
+ "sdk": "2.1.0",
+ "listMarkets": {
+  "markets": [
+   {
+    "id": "0xddc1b305895e06c8a4030d0e29a76de0662a0b9d",
+    "appMarketId": "9498f555-730f-4c70-8e13-7a98dffd36d7",
+    "deployer": "0x32890895612707fe4c34fec836f2dab73d7309f9",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x32890895612707fe4c34fEC836f2DAb73d7309F9%23cf329abf77aec49cec190159a4ef8ed3e5b1619acee044510ee6a594ac84f126.json",
+    "metadataUriContentHash": "0xcf329abf77aec49cec190159a4ef8ed3e5b1619acee044510ee6a594ac84f126",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T03:49:14Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T03:49:14Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin Reach $77000 Before 20 April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-4B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Bitcoin Reach $77000 Before 20 April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-21T03:49:00Z",
+    "resolvesAt": "2026-04-20T03:49:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/9498f555-730f-4c70-8e13-7a98dffd36d7"
+   },
+   {
+    "id": "0x5523bd5dad81a0428c690f07fa681696dbe26365",
+    "appMarketId": "6924f9f4-ad73-4787-9aa0-ee941704c199",
+    "deployer": "0xbedbd36dcbaff2d18371b3ba536a58fdd5505c9c",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xBEDBD36DCbAFF2D18371B3BA536A58fDD5505C9C%236016e2ece9e3af25586b3bc7c9139f0efd3491bc663013886ae118c71c277866.json",
+    "metadataUriContentHash": "0x6016e2ece9e3af25586b3bc7c9139f0efd3491bc663013886ae118c71c277866",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T02:34:50Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T02:34:50Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Ben Fielding Tweet About TGE Date Before 25 April 2026 On X ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Ben Fielding Tweet About TGE Date Before 25 April 2026 On X ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-26T02:34:00Z",
+    "resolvesAt": "2026-04-25T02:34:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/6924f9f4-ad73-4787-9aa0-ee941704c199"
+   },
+   {
+    "id": "0xb9377e0cec20dfd43a4fe9657dc2cb74bd73850d",
+    "appMarketId": "ac9ce3b2-a6a1-4e68-b506-432739a54734",
+    "deployer": "0x54c77950dd6679a6acb9f6f4378bc9b30f8a4a47",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x54C77950DD6679A6aCB9F6F4378bc9B30F8A4a47%234846beb33f88850d64ed67bfc54d57e9e032685a46a6b8fbfe5cd25405cec467.json",
+    "metadataUriContentHash": "0x4846beb33f88850d64ed67bfc54d57e9e032685a46a6b8fbfe5cd25405cec467",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T02:51:36Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T02:51:36Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Gensyn Postponed Again Tge in April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Gensyn Postponed Again Tge in April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "10000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "Reuters",
+     "X (Twitter)",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T02:51:00Z",
+    "resolvesAt": "2026-04-30T02:51:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/ac9ce3b2-a6a1-4e68-b506-432739a54734"
+   },
+   {
+    "id": "0x24fc3dc3fecf971519ea4243a822e33aa2ffc5ae",
+    "appMarketId": "1807d7fd-9717-456f-b83f-40c9972d3f6a",
+    "deployer": "0x5d42c4b80afdfc32e049d6be866b87de703b06e4",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x5d42c4b80aFdFc32E049D6bE866b87DE703B06e4%23b596a49eeaaa5528526fe5829445c1c08317e20f8dbdb49ebdc7a66d8f3cea94.json",
+    "metadataUriContentHash": "0xb596a49eeaaa5528526fe5829445c1c08317e20f8dbdb49ebdc7a66d8f3cea94",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T03:27:36Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T03:27:36Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will $AI Token List At $400M FDV On First Date ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-8B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will $AI Token List At $400M FDV On First Date ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T03:27:00Z",
+    "resolvesAt": "2026-04-30T03:27:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/1807d7fd-9717-456f-b83f-40c9972d3f6a"
+   },
+   {
+    "id": "0xb16f5c2b2f45503c5e0eb4887fd364595fc92666",
+    "appMarketId": "24591440-4122-4e8e-8343-15e306e4c973",
+    "deployer": "0xddd3086d0339a438f5ba6ec510db7b02433f8a90",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xdDd3086d0339a438F5Ba6ec510DB7b02433F8A90%23d766b5607977e532d54b1768550c90d2bc44933ca94f12157d9dc56b89b098aa.json",
+    "metadataUriContentHash": "0xd766b5607977e532d54b1768550c90d2bc44933ca94f12157d9dc56b89b098aa",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T01:26:24Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T01:26:24Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Gensyn release TGE information before April 20, 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Will Gensyn release TGE information before April 20, 2026?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "Gensyn team official Discord announcement",
+     "X (Twitter) official account post",
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Will Gensyn release TGE information before April 20, 2026?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-22T07:00:00Z",
+    "resolvesAt": "2026-04-21T07:00:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/24591440-4122-4e8e-8343-15e306e4c973"
+   },
+   {
+    "id": "0xe30736efb7dde21ada172835aca3d4eea4c9d058",
+    "appMarketId": "3963ac1c-ca31-4c30-90e0-431da822d466",
+    "deployer": "0x1f097cfcc244ac8845610bad3bbfa8e804956013",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x1F097Cfcc244Ac8845610BAD3BBfa8E804956013%2374a6b4f11e858c88b798a553365bce786344e561150ceb0189507522b8104735.json",
+    "metadataUriContentHash": "0x74a6b4f11e858c88b798a553365bce786344e561150ceb0189507522b8104735",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T01:30:44Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T01:30:44Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will $AI Token List At 500M Fdv On First Date ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Will $AI Token List At 500M Fdv On First Date ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-02T06:59:00Z",
+    "resolvesAt": "2026-05-01T06:59:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/3963ac1c-ca31-4c30-90e0-431da822d466"
+   },
+   {
+    "id": "0x7c1555bf543d606130651482d9c0bad17221a9e8",
+    "appMarketId": "0a3d18f0-93d4-4438-815d-d6bfa060df0b",
+    "deployer": "0x9c3c49394441a0bca81311029adde53028f02d61",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x9c3c49394441a0bCa81311029aDdE53028f02D61%23c35be3b82d9bd2b1bbb8b4df3d6d92a0cf2eb19f994ad64be6292c96bda90842.json",
+    "metadataUriContentHash": "0xc35be3b82d9bd2b1bbb8b4df3d6d92a0cf2eb19f994ad64be6292c96bda90842",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T02:25:50Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T02:25:50Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin Reach $78000 Before 25 April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Will Bitcoin Reach $78000 Before 25 April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-27T19:30:00Z",
+    "resolvesAt": "2026-04-26T19:30:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/0a3d18f0-93d4-4438-815d-d6bfa060df0b"
+   },
+   {
+    "id": "0xd9bca29aece6d2fbc12fe9ed782a10207d9fd61b",
+    "appMarketId": "13f77d8c-70de-464c-8f5e-cf2158c6ef30",
+    "deployer": "0x98941ff2597c82a1da478a314d1e330b100998ef",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x98941FF2597c82a1dA478a314D1e330b100998ef%236724c981d24c06f0705d4220d8b7bb73ab7a05b0878a3be8870ef62108bcf062.json",
+    "metadataUriContentHash": "0x6724c981d24c06f0705d4220d8b7bb73ab7a05b0878a3be8870ef62108bcf062",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T01:50:14Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T01:50:14Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will $AI token FDV exceed $300M at TGE?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen2.5-32B-Instruct",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Will $AI token FDV exceed $300M at TGE?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNO"
+     },
+     "initial_liquidity": "10000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-02T07:00:00Z",
+    "resolvesAt": "2026-05-01T07:00:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/13f77d8c-70de-464c-8f5e-cf2158c6ef30"
+   },
+   {
+    "id": "0x7d07660571844bc1bbb4a2e1eddb0bbe803a5851",
+    "appMarketId": "8c31f103-6c32-411a-9f02-60eed120fe3d",
+    "deployer": "0xb88a986016c54cf2fbb72cda726cb8868b128561",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xB88A986016C54cF2fBb72cda726Cb8868B128561%234a5f45de9f01d496372065002b5cfbdbc1b47d4910b3c6d7619794d57472ea06.json",
+    "metadataUriContentHash": "0x4a5f45de9f01d496372065002b5cfbdbc1b47d4910b3c6d7619794d57472ea06",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T01:40:14Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T01:40:14Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Gensyn Postponed TGE Again in Aprill ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Gensyn Postponed TGE Again in Aprill ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "Gensyn team official Discord announcement",
+     "X (Twitter) official account post",
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-02T07:00:00Z",
+    "resolvesAt": "2026-05-01T07:00:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/8c31f103-6c32-411a-9f02-60eed120fe3d"
+   },
+   {
+    "id": "0xf8022b5c02ab07ad52c3067a70578aa639483697",
+    "appMarketId": "5de38916-0bf8-4e41-966f-a78ba824b788",
+    "deployer": "0xaaf4f8cea513bdb6fc2102f43608a28a2fcc5b6e",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xAaf4F8Cea513Bdb6Fc2102F43608A28A2fCC5b6e%2340fc439d87bc2590912a03e6f18c2ad3536005e6bd5523dd3d7e0f5f6e5ad130.json",
+    "metadataUriContentHash": "0x40fc439d87bc2590912a03e6f18c2ad3536005e6bd5523dd3d7e0f5f6e5ad130",
+    "status": "open",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-14T22:06:30Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-14T22:06:30Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": ">2000 Wild Pandas at end of 2026",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Claude Opus 4.6",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: >2000 Wild Pandas at end of 2026\n\nSETTLEMENT RULES:\n- The condition must be verifiable — based on a published fact, official record, or measurable data point.\n- The condition must have been met by the settlement date to count.\n- Output \"Yes\" if: >2000 pandas reported\n- Output \"No\" if: <2001 pandas reported\n\nIf you cannot confidently determine the outcome, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "version": "1.0.0"
+    },
+    "category": "miscellaneous",
+    "verifiable": false,
+    "dataSources": [
+     "X (Twitter)"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2027-01-02T07:59:00Z",
+    "resolvesAt": "2027-01-01T07:59:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/5de38916-0bf8-4e41-966f-a78ba824b788"
+   },
+   {
+    "id": "0xa69e57e3adc8d71b1c01ced6f9462a0190b938de",
+    "appMarketId": "6af273ba-72f9-4614-8a19-48454b7ccbb2",
+    "deployer": "0x1f097cfcc244ac8845610bad3bbfa8e804956013",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x1F097Cfcc244Ac8845610BAD3BBfa8E804956013%23c5e21c596329a27835f9ace8fe836ff32001e30f10cbbba5b745394da324bb34.json",
+    "metadataUriContentHash": "0xc5e21c596329a27835f9ace8fe836ff32001e30f10cbbba5b745394da324bb34",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:28:48Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:28:48Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Gensyn release TGE information before April 25, 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "mistralai/Mistral-7B-Instruct-v0.2",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Gensyn release TGE information before April 25, 2026?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1970000000",
+     "initial_pool": "1393000359",
+     "refund": "576999641",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": false,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-28T01:28:00Z",
+    "resolvesAt": "2026-04-27T01:28:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/6af273ba-72f9-4614-8a19-48454b7ccbb2"
+   },
+   {
+    "id": "0x9d0171a529bcf69db2621b86da86f112cacd0061",
+    "appMarketId": "dbb66501-0901-47ff-923e-486608ae236f",
+    "deployer": "0xbedbd36dcbaff2d18371b3ba536a58fdd5505c9c",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xBEDBD36DCbAFF2D18371B3BA536A58fDD5505C9C%23b11df1868827ab1a6374602fbcea94778b80e8834ac751ebfa946b3667210d32.json",
+    "metadataUriContentHash": "0xb11df1868827ab1a6374602fbcea94778b80e8834ac751ebfa946b3667210d32",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-04-18T07:09:08Z",
+    "settledAt": "2026-04-20T17:11:56Z",
+    "fetchedAt": "2026-04-18T07:09:08Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Gensyn Mainnet Live Before 20 April 2026 ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Gensyn Mainnet Live Before 20 April 2026 ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": "Thanks to everyone who participated in this market on Gensyn mainnet timing. Whether you were right or wrong, your insights and conviction made the market meaningful. Appreciate the engagement—on to the next one.\n\nFinal Result/Output is = No.\n\nThanks Once Again.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-21T17:08:00Z",
+    "resolvesAt": "2026-04-20T17:08:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/dbb66501-0901-47ff-923e-486608ae236f"
+   },
+   {
+    "id": "0x4852f2dbaa48b6cc879770cd93edc7e863346e99",
+    "appMarketId": "ec2ce348-7c2c-4cb2-ab6e-665948ec38b7",
+    "deployer": "0x7c6f9d9f357c1fd66b29bf6972627e6500d2647a",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x7C6F9d9f357c1fd66B29bF6972627E6500D2647A%237fa249f204e954a596c24775f7a2d7d1ba402c5fda1b85a1e7e254e8ef53062f.json",
+    "metadataUriContentHash": "0x7fa249f204e954a596c24775f7a2d7d1ba402c5fda1b85a1e7e254e8ef53062f",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:36:58Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:36:58Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Wil Bitcoin Reach $80000 Before 30 April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "meta-llama/Llama-3.1-8B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Wil Bitcoin Reach $80000 Before 30 April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-03T01:36:00Z",
+    "resolvesAt": "2026-05-02T01:36:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/ec2ce348-7c2c-4cb2-ab6e-665948ec38b7"
+   },
+   {
+    "id": "0xaf8e5cf225c9a9e155b8032665693276ed9ada5e",
+    "appMarketId": "a5cd6453-7054-430d-af90-e00a4a853f7a",
+    "deployer": "0xae43334685cdc846592af81e614229f3d434d57b",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xAE43334685cdc846592Af81E614229F3D434d57b%23ef199d8d47d6f79f42b009fb06c9d86acde7b6bcbe44a07a4feb9d220fbcb59d.json",
+    "metadataUriContentHash": "0xef199d8d47d6f79f42b009fb06c9d86acde7b6bcbe44a07a4feb9d220fbcb59d",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-04-18T02:43:26Z",
+    "settledAt": "2026-04-22T06:31:22Z",
+    "fetchedAt": "2026-04-18T02:43:26Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin Reach $80000 Before 22 April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Bitcoin Reach $80000 Before 22 April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "10000000",
+     "initial_pool": "7071068",
+     "refund": "2928932",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN"
+    ],
+    "proof": "Thanks For Betting.\n\nResult is NO.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-23T02:43:00Z",
+    "resolvesAt": "2026-04-22T02:43:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/a5cd6453-7054-430d-af90-e00a4a853f7a"
+   },
+   {
+    "id": "0x8fc04aa2611379434c95dc02c7045a3a99de20fe",
+    "appMarketId": "f6f9a67f-2e23-42fc-89ed-5c77402e3ea7",
+    "deployer": "0xa9b3fb9c3d580d87053cf11713e15722c913f788",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xA9b3Fb9C3d580D87053CF11713E15722c913f788%23788f6a4c4b45cd856318f725637a780c0a5d7acd50fcbf4868f5884b3d3a8c88.json",
+    "metadataUriContentHash": "0x788f6a4c4b45cd856318f725637a780c0a5d7acd50fcbf4868f5884b3d3a8c88",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:31:40Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:31:40Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will $AI token FDV exceed $400M at TGE?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen2.5-3B-Instruct",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will $AI token FDV exceed $400M at TGE?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1940000000",
+     "initial_pool": "1371787156",
+     "refund": "568212844",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-03T01:31:00Z",
+    "resolvesAt": "2026-05-02T01:31:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/f6f9a67f-2e23-42fc-89ed-5c77402e3ea7"
+   },
+   {
+    "id": "0x08d67a6d77a7dfedc7bf0c526f6778bae431cebe",
+    "appMarketId": "c7ff82b8-aeab-4219-8891-acbf172388b1",
+    "deployer": "0x39b6805f88c7c841f1103f40ab899f5d09e3e091",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x39B6805F88c7C841F1103F40Ab899F5d09e3e091%2344e4b2aacb8c7e40a027257febea80dc7e51bc79de9134e81008d2a06b5f582d.json",
+    "metadataUriContentHash": "0x44e4b2aacb8c7e40a027257febea80dc7e51bc79de9134e81008d2a06b5f582d",
+    "status": "settled",
+    "winningOutcomeIdx": "0",
+    "createdAt": "2026-04-18T05:46:26Z",
+    "settledAt": "2026-05-01T03:47:38Z",
+    "fetchedAt": "2026-04-18T05:46:26Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin hit a new monthly high before April 30, 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Bitcoin hit a new monthly high before April 30, 2026?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": "Thanks For Betting.\n\nOutcome is Yes.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T05:46:00Z",
+    "resolvesAt": "2026-04-30T05:46:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/c7ff82b8-aeab-4219-8891-acbf172388b1"
+   },
+   {
+    "id": "0x7cccc2c18b86f46b634811d72b4a3275a5e2e501",
+    "appMarketId": "be181f8c-f597-4f75-8bd4-0d0159ce24c9",
+    "deployer": "0x9e44634788f42930f4acb3bc613adf056c2d6bf8",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x9E44634788f42930F4ACb3BC613ADF056C2d6bf8%234e5baaf317d2a1cf6b0297da319364b09b12000688c87597d8939eaaafd1416d.json",
+    "metadataUriContentHash": "0x4e5baaf317d2a1cf6b0297da319364b09b12000688c87597d8939eaaafd1416d",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T02:47:34Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T02:47:34Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "$AI Token List On Upbit Before April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: $AI Token List On Upbit Before April ?\n\nSETTLEMENT RULES:\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "50000000",
+     "initial_pool": "35355340",
+     "refund": "14644660",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": false,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Bloomberg",
+     "Reuters",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T02:47:00Z",
+    "resolvesAt": "2026-04-30T02:47:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/be181f8c-f597-4f75-8bd4-0d0159ce24c9"
+   },
+   {
+    "id": "0xeb80e7b0e3bd9ca524e33442e8b36b9350626e74",
+    "appMarketId": "61edc411-7941-4925-9209-f0edde1d174a",
+    "deployer": "0x9c0df4daebd564d8f23de42dbd1b2e5deed900c9",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x9C0DF4daEBd564D8F23dE42DBD1b2E5DEEd900c9%2343012ae4ec214c1044c54902ab2d9e0ef7b8c8996d67b8e2f6fa86d85b6935be.json",
+    "metadataUriContentHash": "0x43012ae4ec214c1044c54902ab2d9e0ef7b8c8996d67b8e2f6fa86d85b6935be",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-04-18T05:47:18Z",
+    "settledAt": "2026-05-01T03:50:12Z",
+    "fetchedAt": "2026-04-18T05:47:18Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will the Federal Reserve change interest rates at its next meeting ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-8B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will the Federal Reserve change interest rates at its next meeting ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the official result or call, the source, and the date of the call or certification.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Only count results that have been officially called or certified by the named source.\n- Preliminary or projected results do not count unless the question specifies otherwise.\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "politics",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": "No.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T05:47:00Z",
+    "resolvesAt": "2026-04-30T05:47:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/61edc411-7941-4925-9209-f0edde1d174a"
+   },
+   {
+    "id": "0x689dcbfccba5e700dd5e992470b50d8317c0f37c",
+    "appMarketId": "6a3ec5b0-d126-4847-afd3-920efbb3764a",
+    "deployer": "0x93c1168bae87b1ba453b644d27c7ab921864e376",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x93c1168BaE87b1ba453b644D27C7Ab921864E376%23b20afe1cea5ca1cf4325478613d0ff21d9378bc9d01951d8f967348bde8696a0.json",
+    "metadataUriContentHash": "0xb20afe1cea5ca1cf4325478613d0ff21d9378bc9d01951d8f967348bde8696a0",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T02:42:00Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T02:42:00Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Bitcoin Price $80000 Above At $AI Listing Day ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Bitcoin Price $80000 Above At $AI Listing Day ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T02:41:00Z",
+    "resolvesAt": "2026-04-30T02:41:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/6a3ec5b0-d126-4847-afd3-920efbb3764a"
+   },
+   {
+    "id": "0x13b37ea298aba0d7a1e8be8c28ff815d6e3b7830",
+    "appMarketId": "a9a8974f-a818-476e-82e4-fd9c0534039b",
+    "deployer": "0xadabfebdd9e0e85b9e0129cfa85d187ee7923634",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xADabfebDD9E0E85b9e0129CFa85D187EE7923634%236188d2d32dcc8dcb260b834cc6605dcc8f47f363f8ed794b30334b1eab85ca0f.json",
+    "metadataUriContentHash": "0x6188d2d32dcc8dcb260b834cc6605dcc8f47f363f8ed794b30334b1eab85ca0f",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-04-18T02:46:34Z",
+    "settledAt": "2026-04-22T06:35:44Z",
+    "fetchedAt": "2026-04-18T02:46:34Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Ethereum Reach $2500 Before 22 April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Ethereum Reach $2500 Before 22 April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": "Thanks everyone for bet on my market.\n\nFinal Result is NO.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-23T02:46:00Z",
+    "resolvesAt": "2026-04-22T02:46:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/a9a8974f-a818-476e-82e4-fd9c0534039b"
+   },
+   {
+    "id": "0xc9fee9cec92c840ed192d8e554e0ae911d328939",
+    "appMarketId": "ad835408-2ab8-40c1-9a5f-bb1e277f6e75",
+    "deployer": "0xbedbd36dcbaff2d18371b3ba536a58fdd5505c9c",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xBEDBD36DCbAFF2D18371B3BA536A58fDD5505C9C%233f99c206b166322a61495b8123ea5ca9f5c242f777ba854131e25149b0dfb138.json",
+    "metadataUriContentHash": "0x3f99c206b166322a61495b8123ea5ca9f5c242f777ba854131e25149b0dfb138",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-05-02T05:22:36Z",
+    "settledAt": null,
+    "fetchedAt": "2026-05-02T05:22:36Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin Reach $81000 in 5 May 2026 ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Bitcoin Reach $81000 in 5 May 2026 ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CoinMarketCap"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-06T17:22:00Z",
+    "resolvesAt": "2026-05-05T17:22:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/ad835408-2ab8-40c1-9a5f-bb1e277f6e75"
+   },
+   {
+    "id": "0xabb1f54ab5caa61f331da729c411aab39e478754",
+    "appMarketId": "2b1aeb1e-3717-4bd7-a793-f2ebaae9ce40",
+    "deployer": "0x30fb7c63fc02015a1b1dee388edb3e7c8e73173d",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x30FB7C63fc02015A1b1DEe388EDb3E7c8E73173d%236545c2f784865527c3eebdba38a5d34d6e70dafd17969081d50bedb7cf5d93cc.json",
+    "metadataUriContentHash": "0x6545c2f784865527c3eebdba38a5d34d6e70dafd17969081d50bedb7cf5d93cc",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T02:16:30Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T02:16:30Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "The price of ETH this month is 2500.",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "ChatGPT 5.4",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: The price of ETH this month is 2500.\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- CoinMarketCap\n\nSETTLEMENT RULES:\n- Compare the reported value against the threshold in the question using the exact comparison specified.\n- Use the initial release value. Revisions published later do not count unless the question specifies otherwise.\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else: \nYes\nNo"
+     },
+     "initial_liquidity": "55000000",
+     "initial_pool": "38890873",
+     "refund": "16109127",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "economics",
+    "verifiable": false,
+    "dataSources": [
+     "CoinMarketCap"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-19T02:16:18.171Z",
+    "resolvesAt": "2026-05-18T02:16:18.171Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/2b1aeb1e-3717-4bd7-a793-f2ebaae9ce40"
+   },
+   {
+    "id": "0x131392860e57c76975ab2d4b0e8f38f1d95dec32",
+    "appMarketId": "09dbd450-0584-4383-945c-480fd9b4257a",
+    "deployer": "0x2d7c72c4674bbb1c740a053ed8ae402436448495",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x2D7C72c4674bBb1c740a053eD8aE402436448495%23a30d8174598289d71a7f4fac3e2f734068913dc4685beaae1af5a8d47fcdd3e0.json",
+    "metadataUriContentHash": "0xa30d8174598289d71a7f4fac3e2f734068913dc4685beaae1af5a8d47fcdd3e0",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-05-02T03:32:30Z",
+    "settledAt": "2026-06-01T03:47:44Z",
+    "fetchedAt": "2026-05-02T03:32:30Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin touch $95,000 by May 31?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "ChatGPT 5.4",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: Will Bitcoin touch $95,000 by May 31?\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- CoinMarketCap\n\nSETTLEMENT RULES:\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [Bitcoin touches $95,000 in May 2026]\n- Output \"No\" if: [Bitcoin does not touch $95,000 in May 2026]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000000",
+     "initial_pool": "7071067812",
+     "refund": "2928932188",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": false,
+    "dataSources": [
+     "CoinMarketCap"
+    ],
+    "proof": "No",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-06-02T00:00:00Z",
+    "resolvesAt": "2026-06-01T00:00:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/09dbd450-0584-4383-945c-480fd9b4257a"
+   },
+   {
+    "id": "0x167e69dd57e875a3c6266fe344842b8c2ad62f3b",
+    "appMarketId": "92455031-98f8-4204-ab94-caad744dd506",
+    "deployer": "0x57738b68472f57d0ce6d7bd56647375f4609a0ec",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x57738B68472f57d0ce6D7Bd56647375F4609a0Ec%23d4b195f7aac2df50563b96e5d5b09d9535fdb824884b68ae8994514040e674e2.json",
+    "metadataUriContentHash": "0xd4b195f7aac2df50563b96e5d5b09d9535fdb824884b68ae8994514040e674e2",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-22T02:48:54Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-22T02:48:54Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will RCB Retian the IPL Title",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "ChatGPT 5.4",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: Will RCB Retian the IPL Title\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- ESPN\n\nSETTLEMENT RULES:\n- Use the official final result only. Include overtime and shootouts unless the question specifies \"regulation time only.\"\n- Output \"Yes\" if: When RCB win the final match in IPL]\n- Output \"No\" if: [When RCB loss the FInal match]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "500000000",
+     "initial_pool": "353553391",
+     "refund": "146446609",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "sports",
+    "verifiable": false,
+    "dataSources": [
+     "ESPN"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-06-01T18:15:00Z",
+    "resolvesAt": "2026-05-31T18:15:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/92455031-98f8-4204-ab94-caad744dd506"
+   },
+   {
+    "id": "0x189314e95737afbb48f41abd9eadc35c3ff24363",
+    "appMarketId": "268af242-1333-42e6-bb57-1e85f5c97d92",
+    "deployer": "0xf1a6bf69dc552e574bdf8d18a15fc5df7869f260",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xF1A6bf69dc552E574bdF8d18a15fC5df7869F260%237c4f8b262e862f3801ebf2064473d1ec8560a2f1e354e94c13107287e8d0aadc.json",
+    "metadataUriContentHash": "0x7c4f8b262e862f3801ebf2064473d1ec8560a2f1e354e94c13107287e8d0aadc",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:43:10Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:43:10Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Ben Fielding Tweet About TGE Date Before 25 April On X?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Ben Fielding Tweet About TGE Date Before 25 April On X?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-28T01:42:00Z",
+    "resolvesAt": "2026-04-27T01:42:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/268af242-1333-42e6-bb57-1e85f5c97d92"
+   },
+   {
+    "id": "0x22d080ee22e472a628a7b28a3a405d842ed5bdac",
+    "appMarketId": "d283776f-dfb3-427e-8179-0ff914cb8517",
+    "deployer": "0x3f406edbc2c3f65d6d897bf48b0dd5a20fe81a92",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x3f406eDBC2c3F65d6d897Bf48b0dd5a20fE81a92%230fcf543501e02dcadd823435082305e267d046916e535cd21ddc086fcbb6303a.json",
+    "metadataUriContentHash": "0x0fcf543501e02dcadd823435082305e267d046916e535cd21ddc086fcbb6303a",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:59:56Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:59:56Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Gensyn release TGE information before April 27, 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "meta-llama/Llama-3.1-8B-Instruct",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Gensyn release TGE information before April 27, 2026?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-29T01:59:00Z",
+    "resolvesAt": "2026-04-28T01:59:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/d283776f-dfb3-427e-8179-0ff914cb8517"
+   },
+   {
+    "id": "0x900dafbe18f3fa78a15811353499804760dc8dd8",
+    "appMarketId": "a21ffafe-a0f6-4820-a7be-ea7add4b2325",
+    "deployer": "0xc059fd9e1c3fbbf1a4217507de89126a3f93b74d",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xC059fD9e1c3FBBF1A4217507de89126A3f93B74d%23343371ba8bfbb22bdd447507385abe2f6ff003cb997a9e18a1915ef85561fc33.json",
+    "metadataUriContentHash": "0x343371ba8bfbb22bdd447507385abe2f6ff003cb997a9e18a1915ef85561fc33",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T04:18:20Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T04:18:20Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Ethereum Reach $2500 Before 20 April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Ethereum Reach $2500 Before 20 April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-21T04:18:00Z",
+    "resolvesAt": "2026-04-20T04:18:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/a21ffafe-a0f6-4820-a7be-ea7add4b2325"
+   },
+   {
+    "id": "0xc7a44650ca5c2897e0a50894294dac62de69b49f",
+    "appMarketId": "ce0d8590-ad7b-4fb4-9693-ceead74d049c",
+    "deployer": "0xc6bdb195d144827e494b8767908f256ed5a94ed2",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xC6BdB195D144827e494B8767908f256ED5A94ED2%239d001be071fde8de981281c30c5700df9231f13b48bf9d830138142bd719c86d.json",
+    "metadataUriContentHash": "0x9d001be071fde8de981281c30c5700df9231f13b48bf9d830138142bd719c86d",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:50:24Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:50:24Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Gensyn Postponed TGE Again In April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "01-ai/Yi-1.5-6B-Chat",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Gensyn Postponed TGE Again In April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "CNBC",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-03T01:50:00Z",
+    "resolvesAt": "2026-05-02T01:50:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/ce0d8590-ad7b-4fb4-9693-ceead74d049c"
+   },
+   {
+    "id": "0xec66324aec477c8cbefdd639f067f9c7042c9cb9",
+    "appMarketId": "32c4e1eb-9d01-4dc5-927a-5e527515de09",
+    "deployer": "0x502890fd78f3503365e24899efbf8cae27822bd5",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x502890Fd78F3503365e24899EfBf8cAe27822BD5%239902ed9e79e80cbc47e691b94afb53e0f3482cc23038809f1f167c3246e37e1e.json",
+    "metadataUriContentHash": "0x9902ed9e79e80cbc47e691b94afb53e0f3482cc23038809f1f167c3246e37e1e",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-16T09:22:44Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-16T09:22:44Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "GT VS KKR Which Team Win On 17 April 2026 ?",
+     "outcomes": [
+      "Gujarat Titans",
+      "Kolkata Knight Riders"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: GT VS KKR Which Team Win On 17 April 2026 ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the teams or players, final score or result, source name, and date.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Use the official final result only. Include overtime and shootouts unless the question specifies \"regulation time only.\"\n- Output \"Gujarat Titans\" if: [DESCRIBE EXACT CONDITION]\n- Output \"Kolkata Knight Riders\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Gujarat Titans\n- Kolkata Knight Riders"
+     },
+     "initial_liquidity": "100000000",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "sports",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-18T16:00:00Z",
+    "resolvesAt": "2026-04-17T16:00:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/32c4e1eb-9d01-4dc5-927a-5e527515de09"
+   },
+   {
+    "id": "0x1fa4a23ba2d793bb47bb98499ef29bdb440454c4",
+    "appMarketId": "0e31d9a0-5723-445b-ba7b-9a3bf06315d5",
+    "deployer": "0x9faea5c243de24ddcf039f073a96f4f959e04883",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x9faEA5c243de24DdCF039F073a96f4f959E04883%23ee35d037c2ba32083862a712fe363832495e3eb6bda19faee83c849799352262.json",
+    "metadataUriContentHash": "0xee35d037c2ba32083862a712fe363832495e3eb6bda19faee83c849799352262",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T02:12:34Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T02:12:34Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "The price of ETH this month is 2400.",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Claude Opus 4.6",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available. \n\nQUESTION: The price of ETH this month is 2400.\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- CNN\n\nSETTLEMENT RULES:\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "50000000",
+     "initial_pool": "35355340",
+     "refund": "14644660",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": false,
+    "dataSources": [
+     "CNN"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-19T02:12:23.357Z",
+    "resolvesAt": "2026-05-18T02:12:23.357Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/0e31d9a0-5723-445b-ba7b-9a3bf06315d5"
+   },
+   {
+    "id": "0x97698eb2b3fcbfbe18327fae2dfc8da297ed19a2",
+    "appMarketId": "abfe92c2-fb4f-486e-a15f-c1c617150a97",
+    "deployer": "0x2d7c72c4674bbb1c740a053ed8ae402436448495",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x2D7C72c4674bBb1c740a053eD8aE402436448495%23cd27885dfd33571dbc0bbe01a701ec530b4588682cef122af7b3a8e45dc7af3d.json",
+    "metadataUriContentHash": "0xcd27885dfd33571dbc0bbe01a701ec530b4588682cef122af7b3a8e45dc7af3d",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-07-10T16:52:16Z",
+    "settledAt": "2026-08-01T17:35:18Z",
+    "fetchedAt": "2026-07-10T16:52:16Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will SOL touch $100 USD In July 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Claude Opus 4.7",
+      "prompt_context": "Resolve the market question: \"Will SOL touch $100 USD In July 2026?\"\n\nValid outcomes:\nYes\nNo\n\nUse the declared data sources first. If sources conflict, prefer the primary official source (Binance SOL/USD spot price page, then CoinGecko, then CoinMarketCap). If the declared sources are unavailable or do not contain enough evidence by the market's settlement time, do not guess; apply the evidence-insufficiency rule below.\n\nSettlement criteria:\n1. Evaluate only events and evidence up to the market's settlement time (i.e., any moment from 2026-07-01 00:00:00 UTC through 2026-07-31 23:59:59 UTC, inclusive, up to and no later than the market's settlement time).\n2. \"Touch $100 USD\" means the SOL/USD spot price reached or exceeded $100.00 USD at any point during July 2026, as recorded on at least one declared source. A single confirmed data point — such as a trade, a 1-minute candle high, or a recorded spot price — at or above $100.00 USD on the SOL/USD pair on Binance, CoinGecko, or CoinMarketCap during July 2026 is sufficient to confirm the outcome as \"Yes\". If no such data point is recorded across all declared sources during July 2026 through the market's settlement time, the outcome is \"No\".\n3. Choose exactly one valid outcome.\n4. Return only the exact outcome label, with no extra text.\n5. If no verified price data is available from the declared sources by the market's settlement time, do not return any listed outcome; apply the evidence-insufficiency rule below.\n\nEvidence-insufficiency rule:\nDo not return any listed outcome if: (a) none of the declared sources (Binance, CoinGecko, CoinMarketCap) are accessible or contain SOL/USD price data for July 2026 by the market's settlement time; or (b) the price data available is disputed across all declared sources with no consistent record and no official ruling has been made by the market's settlement time; or (c) SOL trading is suspended or halted across all declared sources for the entirety of July 2026 through the market's settlement time, making it impossible to verify whether the $100.00 USD threshold was ever reached. In these cases, do not select \"Yes\" or \"No\".\n\nOutput:"
+     },
+     "initial_liquidity": "100000000000",
+     "initial_pool": "70710678119",
+     "refund": "29289321881",
+     "market_creation_fee": "1000000",
+     "version": "1.1.0",
+     "data_sources": [
+      "Binance SOL/USD Price Page",
+      "CoinGecko Solana (SOL)",
+      "CoinMarketCap Solana (SOL)"
+     ]
+    },
+    "category": "crypto",
+    "verifiable": false,
+    "dataSources": [
+     "Binance SOL/USD Price Page",
+     "CoinGecko Solana (SOL)",
+     "CoinMarketCap Solana (SOL)"
+    ],
+    "proof": "No",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-08-01T18:29:00Z",
+    "resolvesAt": "2026-07-31T18:29:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/abfe92c2-fb4f-486e-a15f-c1c617150a97"
+   },
+   {
+    "id": "0xa29c81fc97397f7036cb277e01f6bbbe371d08a5",
+    "appMarketId": "20d99c33-2d50-411e-839a-ec7c937ecdb6",
+    "deployer": "0x2d7c72c4674bbb1c740a053ed8ae402436448495",
+    "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x2D7C72c4674bBb1c740a053eD8aE402436448495%23f7a089e18fc70f12737a8506b21b017cbade9920bda8b7af0b3c2599298f6c3d%23b6d333c5-5725-4659-b576-6e734994a7ba.json",
+    "metadataUriContentHash": "0xf7a089e18fc70f12737a8506b21b017cbade9920bda8b7af0b3c2599298f6c3d",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-09-01T08:03:06Z",
+    "settledAt": "2026-10-01T02:53:00Z",
+    "fetchedAt": "2026-09-01T08:03:06Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin touch 100k$ in September 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen3 32B Verifiable (via REE)",
+      "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if BTC/USDT on Binance reaches a traded price of $100,000.00 or higher at any point during September 2026 (UTC).\n- \"No\": Wins if BTC/USDT on Binance does not reach a traded price of $100,000.00 or higher at any point during September 2026 (UTC).\n\nClarifications:\n- \"Touches $100k\" means any single executed trade price of at least $100,000.00 on BTC/USDT on Binance recorded within September 2026 (from 2026-09-01 00:00:00 UTC through 2026-09-30 23:59:59 UTC), as evidenced by Binance's monthly or daily OHLC high reaching that level."
+     },
+     "initial_liquidity": "100000000000",
+     "initial_pool": "70710678119",
+     "refund": "29289321881",
+     "market_creation_fee": "2000000",
+     "version": "1.2.0",
+     "data_sources": [
+      "Binance",
+      "Coinbase",
+      "CoinGecko"
+     ],
+     "settlement_starts": "2026-10-01T02:29:00.000Z"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "Binance",
+     "Coinbase",
+     "CoinGecko"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-10-02T18:29:00Z",
+    "resolvesAt": "2026-09-30T18:29:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/20d99c33-2d50-411e-839a-ec7c937ecdb6"
+   },
+   {
+    "id": "0xcb1a92a15fd25ee56786e67a4edb949d29b42d7d",
+    "appMarketId": "93e776f6-a4f6-4597-892c-5703f0e10b63",
+    "deployer": "0x2d7c72c4674bbb1c740a053ed8ae402436448495",
+    "implementation": "0xd9313f6a6db9ba1edc1c2a5d0ba1e03a38d8173e",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x2D7C72c4674bBb1c740a053eD8aE402436448495%232417a9f848af9494183de1d2446bf147eb8e0a4f0118c1aa37e8bc90c61cf017.json",
+    "metadataUriContentHash": "0x2417a9f848af9494183de1d2446bf147eb8e0a4f0118c1aa37e8bc90c61cf017",
+    "status": "settled",
+    "winningOutcomeIdx": "1",
+    "createdAt": "2026-08-02T06:03:32Z",
+    "settledAt": "2026-09-01T01:09:28Z",
+    "fetchedAt": "2026-08-02T06:03:32Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin touch 100k$ in August 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen3 32B Verifiable (via REE)",
+      "prompt_context": "Resolution criteria:\n- \"Yes\": Wins if the BTC-USD price on Coinbase reaches or exceeds $100,000.00 at any point during August 2026 (UTC), as reported by Coinbase.\n- \"No\": Wins if the BTC-USD price on Coinbase does not reach $100,000.00 at any point during August 2026 (UTC), as reported by Coinbase.\n\nClarifications:\n- \"Touches $100k\" means the BTC-USD spot price on Coinbase equals or exceeds $100,000.00, even briefly, at any moment within August 2026 (00:00:00 UTC on August 1, 2026 through 23:59:59 UTC on August 31, 2026)."
+     },
+     "initial_liquidity": "100000000000",
+     "initial_pool": "70710678119",
+     "refund": "29289321881",
+     "market_creation_fee": "2000000",
+     "version": "1.1.0",
+     "data_sources": [
+      "Coinbase"
+     ]
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "Coinbase"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-09-02T18:29:00Z",
+    "resolvesAt": "2026-08-31T18:29:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/93e776f6-a4f6-4597-892c-5703f0e10b63"
+   },
+   {
+    "id": "0x1eb11abad532a77be46329c2eb938ae0079c27b0",
+    "appMarketId": "f10d759f-1de9-46cf-97bd-9db4063c72b9",
+    "deployer": "0x35653f44fae4d07d858319ba465fcb10a805f9b2",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x35653F44Fae4d07d858319bA465fcB10A805F9b2%23c0f8091ab3edc92089d98c87d890582bb466e21e86be291f20de1f35abadfb1a.json",
+    "metadataUriContentHash": "0xc0f8091ab3edc92089d98c87d890582bb466e21e86be291f20de1f35abadfb1a",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-19T10:48:30Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-19T10:48:30Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Arsenal win the English Premier league 2025/2026 season",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Gemini 3",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: Will Arsenal win the English Premier league 2025/2026 season\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- ESPN\n- AssociatedPress\n\nSETTLEMENT RULES:\n- Use the official final result only. Include overtime and shootouts unless the question specifies \"regulation time only.\"\n- Output \"Yes\" if: [Arsenal must finish 1st in the final official standings of the 2025/2026 English Premier League season]\n- Output \"No\" if: [Arsenal does not finish 1st in the final official standings]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "5000000",
+     "initial_pool": "3535534",
+     "refund": "1464466",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "sports",
+    "verifiable": false,
+    "dataSources": [
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-25T15:52:00Z",
+    "resolvesAt": "2026-05-24T15:52:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/f10d759f-1de9-46cf-97bd-9db4063c72b9"
+   },
+   {
+    "id": "0x108fd3cd4f200ef066c2c1d6357045502508fba8",
+    "appMarketId": "1a680a63-a3f7-4933-8640-f36ae20f343e",
+    "deployer": "0x2bdf2240b8207eb8c1e1281c7c4d9605f63bf818",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x2BDF2240B8207EB8C1E1281c7c4D9605f63Bf818%238314cb1046e7d3f6b1002041d481231e746d3c71148d579e198a737bea4cf435.json",
+    "metadataUriContentHash": "0x8314cb1046e7d3f6b1002041d481231e746d3c71148d579e198a737bea4cf435",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-23T05:05:02Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-23T05:05:02Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will cristina ronaldo join world cup 2026",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Claude Opus 4.6",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: Will cristina ronaldo join world cup 2026\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- ESPN\n- X (Twitter)\n- Reuters\n- AssociatedPress\n- Bloomberg\n- CNN\n- CNBC\n\nSETTLEMENT RULES:\n- Use the official final result only. Include overtime and shootouts unless the question specifies \"regulation time only.\"\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "sports",
+    "verifiable": false,
+    "dataSources": [
+     "ESPN",
+     "X (Twitter)",
+     "Reuters",
+     "AssociatedPress",
+     "Bloomberg",
+     "CNN",
+     "CNBC"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-08-01T05:04:00Z",
+    "resolvesAt": "2026-07-31T05:04:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/1a680a63-a3f7-4933-8640-f36ae20f343e"
+   },
+   {
+    "id": "0xe48cd02ffb7b9ece2dd9fc2e3cb9c7ce84fc8730",
+    "appMarketId": "146529d8-de36-4c14-930b-9058e575054a",
+    "deployer": "0xe54b1d94696c58301fb36aa5eaa83215a9067fdc",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xe54B1D94696c58301fB36AA5eAA83215a9067Fdc%237bd73f94e93cca60c31968d444010ae8739f4b77e98ed96e1598291d41e468cf.json",
+    "metadataUriContentHash": "0x7bd73f94e93cca60c31968d444010ae8739f4b77e98ed96e1598291d41e468cf",
+    "status": "settled",
+    "winningOutcomeIdx": "0",
+    "createdAt": "2026-04-18T05:48:44Z",
+    "settledAt": "2026-05-01T03:51:40Z",
+    "fetchedAt": "2026-04-18T05:48:44Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will NASDAQ drop more than 5% this month ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "01-ai/Yi-1.5-6B-Chat",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will NASDAQ drop more than 5% this month ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the indicator name, reported value, reporting period, source name, and release date.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the reported value against the threshold in the question using the exact comparison specified.\n- Use the initial release value. Revisions published later do not count unless the question specifies otherwise.\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "economics",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": "Yes bro.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T05:48:00Z",
+    "resolvesAt": "2026-04-30T05:48:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/146529d8-de36-4c14-930b-9058e575054a"
+   },
+   {
+    "id": "0x2300836f3a00db27c0818aa09894a712da8a40a7",
+    "appMarketId": "481df3c2-c2bf-4b51-87df-3e3b6593a745",
+    "deployer": "0x1f289eebc57843804c642b58382a3ea1076405af",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x1f289EeBC57843804C642b58382A3eA1076405aF%23ad3141e3869e5615cd224d252ae7b46c6b1188c4c2801df9a8176226e7112313.json",
+    "metadataUriContentHash": "0xad3141e3869e5615cd224d252ae7b46c6b1188c4c2801df9a8176226e7112313",
+    "status": "settled",
+    "winningOutcomeIdx": "0",
+    "createdAt": "2026-04-18T05:48:00Z",
+    "settledAt": "2026-05-01T03:51:02Z",
+    "fetchedAt": "2026-04-18T05:48:00Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will S&P 500 finish the week higher than it started ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will S&P 500 finish the week higher than it started ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the indicator name, reported value, reporting period, source name, and release date.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the reported value against the threshold in the question using the exact comparison specified.\n- Use the initial release value. Revisions published later do not count unless the question specifies otherwise.\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "economics",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": "Yes.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T05:47:00Z",
+    "resolvesAt": "2026-04-30T05:47:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/481df3c2-c2bf-4b51-87df-3e3b6593a745"
+   },
+   {
+    "id": "0x3dcc2cec9aef163cb7e2a01d258e29aefe8c1ce4",
+    "appMarketId": "35811664-6899-4eca-9b93-25961c121d63",
+    "deployer": "0x9a40c5cb52a1799acfe0246053c986783c365510",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x9a40c5CB52a1799Acfe0246053C986783c365510%232cf186d1c64af2b64f18446d07f6391e9df4c0206e80469584ea8720807868d1.json",
+    "metadataUriContentHash": "0x2cf186d1c64af2b64f18446d07f6391e9df4c0206e80469584ea8720807868d1",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:46:48Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:46:48Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will $AI Token FDV Exceed $300M At TGE?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen2.5-3B-Instruct",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will $AI Token FDV Exceed $300M At TGE?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-03T01:46:00Z",
+    "resolvesAt": "2026-05-02T01:46:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/35811664-6899-4eca-9b93-25961c121d63"
+   },
+   {
+    "id": "0x5c0810b2155c121f581368a3c84c08056c93a60c",
+    "appMarketId": "d182e691-ff0d-4734-a275-ad30352acd41",
+    "deployer": "0xa1ebc556a2d1efe903a3dfed1e5b86f043ad38de",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xa1EBc556A2d1eFe903a3dFed1E5B86f043aD38dE%23a8d3a0042b78086d931a1cba658c989a9db7bed311bc58983c9316ed69789e23.json",
+    "metadataUriContentHash": "0xa8d3a0042b78086d931a1cba658c989a9db7bed311bc58983c9316ed69789e23",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:45:10Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:45:10Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will $AI Token FDV Exceed $500M At TGE?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "llm-jp/llm-jp-3-3.7b-instruct",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will $AI Token FDV Exceed $500M At TGE?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-03T01:44:00Z",
+    "resolvesAt": "2026-05-02T01:44:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/d182e691-ff0d-4734-a275-ad30352acd41"
+   },
+   {
+    "id": "0x0caf7045b341f80c64261ce34fd0f20983e56031",
+    "appMarketId": "3e8cae33-4ae7-4f51-afc2-fb024d108580",
+    "deployer": "0x9a16624418164ce47a621b3caa35b9de4266ba2e",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x9a16624418164Ce47A621B3cAA35B9dE4266Ba2e%232e65f5601e2d8ef2959425d3c9b33e2f3507e37ae79b7e5ced34f1c4b9260166.json",
+    "metadataUriContentHash": "0x2e65f5601e2d8ef2959425d3c9b33e2f3507e37ae79b7e5ced34f1c4b9260166",
+    "status": "open",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-21T19:26:18Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-21T19:26:18Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will the German Chancellor resign before January 1, 2027?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Claude Opus 4.7",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: Will the German Chancellor resign before January 1, 2027?\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- Bloomberg\n\nSETTLEMENT RULES:\n- Only count results that have been officially called or certified by the named source.\n- Preliminary or projected results do not count unless the question specifies otherwise.\n- Output \"Yes\" if: German Chancellor resign before January 1, 2027\n- Output \"No\" if: The German Chancellor will not resign until January 1, 2027.\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "politics",
+    "verifiable": false,
+    "dataSources": [
+     "Bloomberg"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-12-02T19:25:00Z",
+    "resolvesAt": "2026-12-01T19:25:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/3e8cae33-4ae7-4f51-afc2-fb024d108580"
+   },
+   {
+    "id": "0x237a525855b01261b3dc7c4a4047feabd385dbeb",
+    "appMarketId": "7a2be214-7216-476b-8d7e-3da08545e9a9",
+    "deployer": "0x26990421530b0f71f7f4c1f6bd1c028f5d22700b",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x26990421530b0f71F7F4c1F6BD1C028F5D22700B%232358539e670d7c53c242e3e5307e12e6376e37d1c4dc880a58b4f641f8ce5314.json",
+    "metadataUriContentHash": "0x2358539e670d7c53c242e3e5307e12e6376e37d1c4dc880a58b4f641f8ce5314",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T14:01:04Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T14:01:04Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will the total assets of BlackRock exceed $15 trillion by 2026?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Claude Opus 4.7",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: Will the total assets of BlackRock exceed $15 trillion by 2026?\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- Bloomberg\n\nSETTLEMENT RULES:\n- Only count results that have been officially called or certified by the named source.\n- Preliminary or projected results do not count unless the question specifies otherwise.\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "1000000000",
+     "initial_pool": "707106782",
+     "refund": "292893218",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "politics",
+    "verifiable": false,
+    "dataSources": [
+     "Bloomberg"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-19T14:00:50.539Z",
+    "resolvesAt": "2026-05-18T14:00:50.539Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/7a2be214-7216-476b-8d7e-3da08545e9a9"
+   },
+   {
+    "id": "0x7afa1480aab6eadaed140f27d030750fd3e5c084",
+    "appMarketId": "a0e9cad4-e9e7-4aa7-8c54-4ec624f85aaa",
+    "deployer": "0x954fccec88abd750664860f521866e89a98ea3f1",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x954fcCEc88aBd750664860f521866e89A98Ea3f1%232f2b5fa9765d22fb1ad0b0917b0482a2e9b1e30a990f8dab6cbb7a36cd01195f.json",
+    "metadataUriContentHash": "0x2f2b5fa9765d22fb1ad0b0917b0482a2e9b1e30a990f8dab6cbb7a36cd01195f",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T02:28:44Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T02:28:44Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "The price of ETH this month is below 2600.",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Gemini 3",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: The price of ETH this month is below 2600.\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome:\n- X (Twitter)\n\nSETTLEMENT RULES:\n- The condition must be verifiable — based on a published fact, official record, or measurable data point.\n- The condition must have been met by the settlement date to count.\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n \nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "miscellaneous",
+    "verifiable": false,
+    "dataSources": [
+     "X (Twitter)"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-19T02:28:31.475Z",
+    "resolvesAt": "2026-05-18T02:28:31.475Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/a0e9cad4-e9e7-4aa7-8c54-4ec624f85aaa"
+   },
+   {
+    "id": "0xee059b87d2b858d821c859194acf1e4dbd649e81",
+    "appMarketId": "e47f8242-dd05-47c9-8dfc-866c18ce4fe8",
+    "deployer": "0x9ed3b345f9ac3d205c942952dcaf6d91110f06b2",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x9eD3B345f9ac3d205c942952DcAF6d91110F06B2%236c2fc87b918a3d5bd9aa95fd0981dff913bd3f6bcfdb4c1fb5bb0322fe318502.json",
+    "metadataUriContentHash": "0x6c2fc87b918a3d5bd9aa95fd0981dff913bd3f6bcfdb4c1fb5bb0322fe318502",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T01:55:20Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T01:55:20Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Wil Bitcoin Reach $83000 Before 30 April ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen2.5-7B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Wil Bitcoin Reach $83000 Before 30 April ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "AssociatedPress",
+     "ESPN"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-03T01:55:00Z",
+    "resolvesAt": "2026-05-02T01:55:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/e47f8242-dd05-47c9-8dfc-866c18ce4fe8"
+   },
+   {
+    "id": "0x7581971cf5cee265813de169b96e98881e8e591a",
+    "appMarketId": "8f5bafac-df2a-46c0-915e-b0f3d2b84549",
+    "deployer": "0x681b8b1379da25e88b080373ce563a24182f63da",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x681B8B1379DA25E88B080373CE563A24182f63da%23cb14abedc8a9db78d28e94db5fd8954f101f034caa3feea53c8afeed51842ab9.json",
+    "metadataUriContentHash": "0xcb14abedc8a9db78d28e94db5fd8954f101f034caa3feea53c8afeed51842ab9",
+    "status": "settled",
+    "winningOutcomeIdx": "0",
+    "createdAt": "2026-04-18T05:49:20Z",
+    "settledAt": "2026-04-22T06:34:04Z",
+    "fetchedAt": "2026-04-18T05:49:20Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Paris Saint-Germain win their next match ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will Paris Saint-Germain win their next match ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the teams or players, final score or result, source name, and date.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Use the official final result only. Include overtime and shootouts unless the question specifies \"regulation time only.\"\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "sports",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "AssociatedPress",
+     "ESPN"
+    ],
+    "proof": "Yes.",
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-23T05:49:00Z",
+    "resolvesAt": "2026-04-22T05:49:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/8f5bafac-df2a-46c0-915e-b0f3d2b84549"
+   },
+   {
+    "id": "0xa6927e5e00dec2edf5ec4538cca021c5a1c8fb82",
+    "appMarketId": "c2bb6700-cb0f-47bf-abeb-28faaf9671cc",
+    "deployer": "0x45bf288ef279b129141dbe6c5e531412ce80c751",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x45bF288ef279b129141DBe6c5e531412cE80C751%2394c4ac68c1e12880b46c6d2ce467ab86dfdf70037c7b1e19d58617213fd9fb0d.json",
+    "metadataUriContentHash": "0x94c4ac68c1e12880b46c6d2ce467ab86dfdf70037c7b1e19d58617213fd9fb0d",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-21T14:09:18Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-21T14:09:18Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Ben Fielding Tweet About TGE Date Before 29 April On X?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Ben Fielding Tweet About TGE Date Before 29 April On X?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000",
+     "initial_pool": "7071068",
+     "refund": "2928932",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-22T14:09:03.243Z",
+    "resolvesAt": "2026-05-21T14:09:03.243Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/c2bb6700-cb0f-47bf-abeb-28faaf9671cc"
+   },
+   {
+    "id": "0x459cbd97ba228951d03fedecb753a1c4e6113acf",
+    "appMarketId": "8e85e46f-a155-4667-bd04-f60b95b496d4",
+    "deployer": "0x049303279be88aea6b523d0b3b4600073c699b73",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x049303279BE88aEa6B523D0b3b4600073c699b73%233514524f6d3ef2a27c9ce0101aa95a77360d760db5df73241d92fcbc9199a31d.json",
+    "metadataUriContentHash": "0x3514524f6d3ef2a27c9ce0101aa95a77360d760db5df73241d92fcbc9199a31d",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T02:14:32Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T02:14:32Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "The price of ETH this month is 2470.",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Claude Opus 4.7",
+      "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: The price of ETH this month is 2470.\n\nDATA SOURCES:\nUse the following sources to gather information and determine the outcome: \n- CNBC\n\nSETTLEMENT RULES:\n- Only use verified, published results. Rumors, leaks, or unofficial reports do not count.\n- The event or condition must have occurred by the settlement date to count.\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000",
+     "initial_pool": "7071068",
+     "refund": "2928932",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "culture",
+    "verifiable": false,
+    "dataSources": [
+     "CNBC"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-19T02:14:19.37Z",
+    "resolvesAt": "2026-05-18T02:14:19.37Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/8e85e46f-a155-4667-bd04-f60b95b496d4"
+   },
+   {
+    "id": "0x434a5df1be2b1678ad41de5194adc99a7899e478",
+    "appMarketId": "d1566633-94b7-4d2e-b178-a83aca16048e",
+    "deployer": "0x8e7007bc0aeccbd00b39a2e1418c3219f02c2c07",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0x8E7007Bc0AECCbd00B39A2E1418C3219F02c2C07%23c76c5be37b913a3c4f123fceee4d9643741d7a8f48814d2b5cde11530b0aadef.json",
+    "metadataUriContentHash": "0xc76c5be37b913a3c4f123fceee4d9643741d7a8f48814d2b5cde11530b0aadef",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-16T03:57:04Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-16T03:57:04Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Bitcoin Price $80000 Above At $AI Listing Day ?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "mistralai/Mistral-7B-Instruct-v0.2",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Bitcoin Price $80000 Above At $AI Listing Day ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+     },
+     "initial_liquidity": "1000000000",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-01T03:56:00Z",
+    "resolvesAt": "2026-04-30T03:56:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/d1566633-94b7-4d2e-b178-a83aca16048e"
+   },
+   {
+    "id": "0x03d5da8cd19cac7c2349f123d25bb9430ace5982",
+    "appMarketId": "2dd8a1ac-7d54-44aa-aaf8-42bf7af53196",
+    "deployer": "0xec91f248b77906172ec51088e4e051c8a3483fdb",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xeC91f248B77906172Ec51088e4E051C8a3483FDb%237e02989402c76fecf8928cf10057c2b24d48e23691f5aa2418f8fb6bfbeb6d34.json",
+    "metadataUriContentHash": "0x7e02989402c76fecf8928cf10057c2b24d48e23691f5aa2418f8fb6bfbeb6d34",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-15T02:18:58Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-15T02:18:58Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will the Iranian regime fall by April 30?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen2.5-32B-Instruct",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Will the Iranian regime fall by April 30?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the official result or call, the source, and the date of the call or certification.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above. If it still says \"<NO EVIDENCE PROVIDED>\" or is empty, output \"No\".\n- Only count results that have been officially called or certified by the named source.\n- Preliminary or projected results do not count unless the question specifies otherwise.\n- If the result has not been officially called or certified, output \"No\".\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nIf the evidence is missing, empty, or insufficient, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "10000000",
+     "version": "1.0.0"
+    },
+    "category": "politics",
+    "verifiable": true,
+    "dataSources": [
+     "CNN",
+     "CNBC",
+     "CoinMarketCap",
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "ESPN",
+     "AssociatedPress"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-02T19:30:00Z",
+    "resolvesAt": "2026-05-01T19:30:00Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/2dd8a1ac-7d54-44aa-aaf8-42bf7af53196"
+   },
+   {
+    "id": "0xb77b8c9abccb9d8c09c1bd6b510f7cd4bf99f057",
+    "appMarketId": "4170c294-6f3e-42e7-9684-95af34ab9d3c",
+    "deployer": "0xb2b2c46defe1ae1e1e0d7f191983e8bbb218f1a0",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xb2B2C46dEFE1AE1e1E0d7f191983E8bBB218F1a0%23b2b50dfd75baab53c15bde721fa7910276b80636e267df58a4f5bd52ef016606.json",
+    "metadataUriContentHash": "0xb2b50dfd75baab53c15bde721fa7910276b80636e267df58a4f5bd52ef016606",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-18T12:44:18Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-18T12:44:18Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will $AI Price Above $0.15 at TGE Date?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Will $AI Price Above $0.15 at TGE Date?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "CoinMarketCap"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-05-19T12:44:01.322Z",
+    "resolvesAt": "2026-05-18T12:44:01.322Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/4170c294-6f3e-42e7-9684-95af34ab9d3c"
+   },
+   {
+    "id": "0x1977cc4a4c0d44f31deaa86642245401013cb585",
+    "appMarketId": "ffd8cefa-9de8-4e8a-b8ea-4b3e6dd36936",
+    "deployer": "0xbe4c531d36b861515e96a4a9ca3829e4fc7a9dfa",
+    "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+    "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xbe4C531d36b861515e96A4A9cA3829e4fC7A9dfa%2307683235cdeae09473c0699e209f24ea9b9e4c780cf8e0b4e6ce398ddbfe4f6d.json",
+    "metadataUriContentHash": "0x07683235cdeae09473c0699e209f24ea9b9e4c780cf8e0b4e6ce398ddbfe4f6d",
+    "status": "expired",
+    "winningOutcomeIdx": null,
+    "createdAt": "2026-04-20T00:21:00Z",
+    "settledAt": null,
+    "fetchedAt": "2026-04-20T00:21:00Z",
+    "fetchResponseStatus": "success",
+    "error": null,
+    "metadata": {
+     "question": "Will Bitcoin drop below $60,000 by Apr 23, 2026 23:59 UTC?",
+     "outcomes": [
+      "Yes",
+      "No"
+     ],
+     "model": {
+      "model_identifier": "Qwen/Qwen3-32B",
+      "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess.\n\nQUESTION: Will Bitcoin drop below $60,000 by Apr 23, 2026 23:59 UTC?\n\nEVIDENCE:\nUse BTC/USD price data from major exchanges or aggregators such as Binance, Coinbase, or CoinMarketCap, including the exact price and timestamp.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Output \"Yes\" if: Bitcoin (BTC/USD) trades at any price strictly less than $60,000 on any of the named sources before Apr 23, 2026 23:59 UTC.\n- Output \"No\" if: Bitcoin does not drop below $60,000 before the deadline.\n\nVALID OUTCOMES:\nYes\nNo"
+     },
+     "initial_liquidity": "100000000",
+     "initial_pool": "70710679",
+     "refund": "29289321",
+     "market_creation_fee": "1000000",
+     "version": "1.0.0"
+    },
+    "category": "crypto",
+    "verifiable": true,
+    "dataSources": [
+     "X (Twitter)",
+     "Reuters",
+     "Bloomberg",
+     "AssociatedPress",
+     "CNBC",
+     "CNN",
+     "CoinMarketCap"
+    ],
+    "proof": null,
+    "tradingFee": "20000000000000000",
+    "settlesAt": "2026-04-24T00:20:43.905Z",
+    "resolvesAt": "2026-04-23T00:20:43.905Z",
+    "marketUrl": "https://testnet.delphi.fyi/market/ffd8cefa-9de8-4e8a-b8ea-4b3e6dd36936"
+   }
+  ]
+ },
+ "getMarket_settled": {
+  "id": "0x9d0171a529bcf69db2621b86da86f112cacd0061",
+  "appMarketId": "dbb66501-0901-47ff-923e-486608ae236f",
+  "deployer": "0xbedbd36dcbaff2d18371b3ba536a58fdd5505c9c",
+  "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+  "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xBEDBD36DCbAFF2D18371B3BA536A58fDD5505C9C%23b11df1868827ab1a6374602fbcea94778b80e8834ac751ebfa946b3667210d32.json",
+  "metadataUriContentHash": "0xb11df1868827ab1a6374602fbcea94778b80e8834ac751ebfa946b3667210d32",
+  "status": "settled",
+  "winningOutcomeIdx": "1",
+  "createdAt": "2026-04-18T07:09:08Z",
+  "settledAt": "2026-04-20T17:11:56Z",
+  "fetchedAt": "2026-04-18T07:09:08Z",
+  "fetchResponseStatus": "success",
+  "error": null,
+  "metadata": {
+   "question": "Gensyn Mainnet Live Before 20 April 2026 ?",
+   "outcomes": [
+    "Yes",
+    "No"
+   ],
+   "model": {
+    "model_identifier": "Qwen/Qwen3-32B",
+    "prompt_context": "You are a prediction market settlement judge. Determine the outcome using ONLY the evidence provided below. Do not use outside knowledge. Do not guess. In the case where there is not a clear answer, select the best-supported outcome.\n\nQUESTION: Gensyn Mainnet Live Before 20 April 2026 ?\n\nEVIDENCE (REQUIRED — you must replace the line below with real data before running this prompt):\n<NO EVIDENCE PROVIDED>\nInclude: the asset name, exact price or value, currency, source name, and exact date/time of the reading.\n\nSETTLEMENT RULES:\n- Use ONLY the evidence above.\n- Compare the exact price or metric value against the threshold in the question.\n- Use the exact comparison stated in the question (greater than, less than, equal to, etc.).\n- Output \"Yes\" if: [DESCRIBE EXACT CONDITION]\n- Output \"No\" if: [DESCRIBE EXACT CONDITION]\n\nVALID OUTCOMES — output exactly one and nothing else:\n- Yes\n- No"
+   },
+   "initial_liquidity": "1000000000",
+   "initial_pool": "707106782",
+   "refund": "292893218",
+   "market_creation_fee": "1000000",
+   "version": "1.0.0"
+  },
+  "category": "crypto",
+  "verifiable": true,
+  "dataSources": [
+   "CNN",
+   "CNBC",
+   "CoinMarketCap",
+   "X (Twitter)",
+   "Reuters",
+   "Bloomberg",
+   "ESPN",
+   "AssociatedPress"
+  ],
+  "proof": "Thanks to everyone who participated in this market on Gensyn mainnet timing. Whether you were right or wrong, your insights and conviction made the market meaningful. Appreciate the engagement—on to the next one.\n\nFinal Result/Output is = No.\n\nThanks Once Again.",
+  "tradingFee": "20000000000000000",
+  "settlesAt": "2026-04-21T17:08:00Z",
+  "resolvesAt": "2026-04-20T17:08:00Z",
+  "marketUrl": "https://testnet.delphi.fyi/market/dbb66501-0901-47ff-923e-486608ae236f"
+ },
+ "getMarket_open": {
+  "id": "0xf8022b5c02ab07ad52c3067a70578aa639483697",
+  "appMarketId": "5de38916-0bf8-4e41-966f-a78ba824b788",
+  "deployer": "0xaaf4f8cea513bdb6fc2102f43608a28a2fcc5b6e",
+  "implementation": "0x0fea84d625da0bb25f5a2b319b95baab5e0f190f",
+  "metadataUri": "https://storage.googleapis.com/d9151eb2727880b3-delphi-market-metadata/0xAaf4F8Cea513Bdb6Fc2102F43608A28A2fCC5b6e%2340fc439d87bc2590912a03e6f18c2ad3536005e6bd5523dd3d7e0f5f6e5ad130.json",
+  "metadataUriContentHash": "0x40fc439d87bc2590912a03e6f18c2ad3536005e6bd5523dd3d7e0f5f6e5ad130",
+  "status": "open",
+  "winningOutcomeIdx": null,
+  "createdAt": "2026-04-14T22:06:30Z",
+  "settledAt": null,
+  "fetchedAt": "2026-04-14T22:06:30Z",
+  "fetchResponseStatus": "success",
+  "error": null,
+  "metadata": {
+   "question": ">2000 Wild Pandas at end of 2026",
+   "outcomes": [
+    "Yes",
+    "No"
+   ],
+   "model": {
+    "model_identifier": "Claude Opus 4.6",
+    "prompt_context": "You are a prediction market settlement judge. Determine the correct outcome using the most reliable and up-to-date information available.\n\nQUESTION: >2000 Wild Pandas at end of 2026\n\nSETTLEMENT RULES:\n- The condition must be verifiable — based on a published fact, official record, or measurable data point.\n- The condition must have been met by the settlement date to count.\n- Output \"Yes\" if: >2000 pandas reported\n- Output \"No\" if: <2001 pandas reported\n\nIf you cannot confidently determine the outcome, output \"No\".\n\nVALID OUTCOMES — output exactly one and nothing else:\nYes\nNo"
+   },
+   "initial_liquidity": "100000000",
+   "version": "1.0.0"
+  },
+  "category": "miscellaneous",
+  "verifiable": false,
+  "dataSources": [
+   "X (Twitter)"
+  ],
+  "proof": null,
+  "tradingFee": "20000000000000000",
+  "settlesAt": "2027-01-02T07:59:00Z",
+  "resolvesAt": "2027-01-01T07:59:00Z",
+  "marketUrl": "https://testnet.delphi.fyi/market/5de38916-0bf8-4e41-966f-a78ba824b788"
+ },
+ "positions_probe": {
+  "positions": null
+ }
+}

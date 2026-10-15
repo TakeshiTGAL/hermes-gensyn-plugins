@@ -1,0 +1,68 @@
+name: tests
+
+# Each plugin against current Hermes core, on Linux and macOS.
+# Windows is omitted: plugin.yaml platforms are linux and macos only.
+# Delphi host dispatch uses HERMES_AGENT_REPO, the Hermes checkout above,
+# and does not skip when that directory exists. test_live_docker.py skips
+# unless REE_LIVE=1. This workflow does not set REE_LIVE.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    strategy:
+      fail-fast: false
+      matrix:
+        plugin: [delphi, ree]
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.plugin }} · ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: plugins
+      - uses: actions/checkout@v4
+        with:
+          repository: NousResearch/hermes-agent
+          path: hermes-agent
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - uses: actions/setup-node@v4
+        if: matrix.plugin == 'delphi'
+        with:
+          node-version: "22"
+      - name: Install hermes-agent and the plugin's dependencies
+        shell: bash
+        run: |
+          python -m pip install -e ./hermes-agent pytest pytest-asyncio
+          deps=$(python -c 'import pathlib,sys,tomllib; p=pathlib.Path(sys.argv[1]); print("\n".join(tomllib.loads(p.read_text())["project"].get("dependencies", [])) if p.is_file() else "")' "plugins/packages/${{ matrix.plugin }}/pyproject.toml")
+          if [ -n "$deps" ]; then printf '%s\n' "$deps" > "$RUNNER_TEMP/plugin-reqs.txt"; python -m pip install -r "$RUNNER_TEMP/plugin-reqs.txt"; fi
+      - name: Install the pinned Delphi SDK without lifecycle scripts
+        if: matrix.plugin == 'delphi'
+        working-directory: plugins/packages/delphi
+        run: npm ci --ignore-scripts
+      - name: Validate the manifest against core
+        shell: bash
+        run: python -m hermes_cli.main plugins validate "plugins/packages/${{ matrix.plugin }}"
+        env:
+          HERMES_HOME: ${{ runner.temp }}/hermes-home
+          PYTHONPATH: ${{ github.workspace }}/hermes-agent
+      - name: Run the plugin suite
+        working-directory: plugins/packages/${{ matrix.plugin }}
+        env:
+          HERMES_AGENT_REPO: ${{ github.workspace }}/hermes-agent
+          PYTHONPATH: ${{ github.workspace }}/hermes-agent
+        run: python -m pytest -q
+      - name: Node bridge tests
+        if: matrix.plugin == 'delphi'
+        working-directory: plugins/packages/delphi
+        run: npm test

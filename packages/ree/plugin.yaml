@@ -1,0 +1,52 @@
+name: hermes-gensyn-ree
+version: 0.1.0
+manifest_version: 2
+requires_hermes: ">=0.21.6"
+description: >-
+  Three tools for a Gensyn REE receipt on this computer.
+  ree_validate_receipt checks the receipt's own hashes and does not stand
+  behind text_output, finish_reason, token_count, model.name, or ree_version.
+  ree_verify_receipt re-executes on CPU; a hash match with different text is
+  text_mismatch. ree_validate_receipt does not limit model.name to three
+  names and does not re-execute. ree_infer runs one of three small models
+  and writes a new receipt. Disclosure — Starts a container from the local image
+  gensynai/ree:v0.8.0 and does not pull it. Running docker pull yourself is
+  consent to the REE-Binary-License. Verify and infer mount
+  ~/.cache/gensyn and ~/.cache/huggingface and may download Hugging Face
+  weights. They also mount one tasks directory. Verify also mounts one
+  receipt file read-only. Infer does not mount a receipt file. It does not
+  pass a token in the environment. A token file already in
+  ~/.cache/huggingface is visible to the container. The container network
+  is not limited to Hugging Face. CPU runs can take minutes.
+  Those two tools ask approval every time. Cron, yolo,
+  approvals off, single-query, unattended, host isolation, a missing approval
+  API, or a question that would be cut are refused before re-execution or
+  inference. Validate
+  uses network none, does not ask, and does not return the receipt text.
+  Every Hermes surface enables these tools
+  by default, including gateways; a person admitted to a gateway can start
+  containers on your Docker daemon. Disable per surface with hermes tools.
+  Choosing always stores one config.yaml line and does not cover the next call.
+  Nothing is stored under <HERMES_HOME>/plugin-data/hermes-gensyn-ree. Weights
+  remain in the two cache directories. Returned receipts are under
+  ~/.cache/hermes-ree/receipts, which is not mounted. Verify mounts the
+  staged receipt file and the tasks directory from ~/.cache/hermes-ree/work.
+  Infer mounts that tasks directory and does not mount a receipt file. The child is not a hostile-code
+  sandbox. No cron is created. Linux and macOS only. REE is a Gensyn product.
+  This plugin only runs the official image and does not redistribute or
+  reimplement it.
+author: TakeshiTGAL
+license: MIT
+platforms:
+  - linux
+  - macos
+provides_tools:
+  - ree_validate_receipt
+  - ree_verify_receipt
+  - ree_infer
+provides_hooks: []
+config_schema:
+  docker_context:
+    type: string
+    default: ""
+    description: Docker context for re-execution. Empty uses the current context. Letters, digits, underscore, hyphen, at most 64. A leading hyphen is rejected.

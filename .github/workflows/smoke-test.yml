@@ -1,0 +1,81 @@
+name: smoke
+on:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install test runner
+        run: python -m pip install "pytest>=8,<9"
+      - name: Install pinned SDK without lifecycle scripts
+        working-directory: packages/delphi
+        run: npm ci --ignore-scripts
+      - name: Python offline tests
+        run: python -m pytest packages/delphi/tests -q --ignore=packages/delphi/tests/test_live.py
+      - name: Node bridge tests
+        run: npm --prefix packages/delphi test
+
+  keyless:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: NousResearch/hermes-agent
+          path: hermes-agent
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned SDK without lifecycle scripts
+        working-directory: packages/delphi
+        run: npm ci --ignore-scripts
+      - name: Read public testnet subgraph meta through the production gate
+        env:
+          DELPHI_NETWORK: testnet
+          DELPHI_API_ACCESS_KEY: ""
+          PYTHONPATH: ${{ github.workspace }}/hermes-agent
+        run: python packages/delphi/scripts/smoke.py keyless || exit 1
+
+  keyed:
+    # A fork pull request cannot receive the repository secret.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: NousResearch/hermes-agent
+          path: hermes-agent
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned SDK without lifecycle scripts
+        working-directory: packages/delphi
+        run: npm ci --ignore-scripts
+      - name: List one market and compute one edge through production gates
+        env:
+          DELPHI_NETWORK: testnet
+          DELPHI_API_ACCESS_KEY: ${{ secrets.DELPHI_API_ACCESS_KEY }}
+          PYTHONPATH: ${{ github.workspace }}/hermes-agent
+        run: python packages/delphi/scripts/smoke.py keyed || exit 1
