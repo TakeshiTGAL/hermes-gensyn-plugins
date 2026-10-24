@@ -35,7 +35,7 @@ jobs:
           path: hermes-agent
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.14"
+          python-version: "3.13"  # 3.14 is blocked upstream: hermes-agent pins Pillow 13 and browser-harness pins Pillow 12.3 (2026-10-23); back to 3.14 when fixed
       - uses: actions/setup-node@v4
         if: matrix.plugin == 'delphi'
         with:
