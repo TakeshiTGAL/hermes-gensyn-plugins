@@ -67,13 +67,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14"
+      - name: Check that the Delphi key is set
+        id: key
+        env:
+          K: ${{ secrets.DELPHI_API_ACCESS_KEY }}
+        run: |
+          if [ -z "$K" ]; then
+            echo "::notice::DELPHI_API_ACCESS_KEY is not set for this repository. The keyed smoke was skipped, not passed."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-node@v4
+        if: steps.key.outputs.present == 'true'
         with:
           node-version: "22"
       - name: Install pinned SDK without lifecycle scripts
+        if: steps.key.outputs.present == 'true'
         working-directory: packages/delphi
         run: npm ci --ignore-scripts
       - name: List one market and compute one edge through production gates
+        if: steps.key.outputs.present == 'true'
         env:
           DELPHI_NETWORK: testnet
           DELPHI_API_ACCESS_KEY: ${{ secrets.DELPHI_API_ACCESS_KEY }}
