@@ -108,23 +108,6 @@ if os.environ.get("REE_ENTRY_CHILD") == "1":
     discover_plugins()
     from tools.registry import registry
     asked = []
-    if scenario == "fit":
-        import types
-        approval = types.ModuleType("tools.approval")
-        context = types.ModuleType("tools.approval_context")
-
-        def request(_name, text, rule_key=""):
-            asked.append(text)
-            return {"approved": False, "outcome": "denied"}
-
-        approval.request_tool_approval = request
-        approval._yolo_active = lambda: False
-        context._is_cron_approval_context = lambda: False
-        context._get_approval_mode = lambda: "manual"
-        context._is_single_query_approval_context = lambda: False
-        context._is_unattended_platform_approval_context = lambda: False
-        sys.modules["tools.approval"] = approval
-        sys.modules["tools.approval_context"] = context
 
     def call(name, args):
         raw = registry.dispatch(name, args)
@@ -142,6 +125,15 @@ if os.environ.get("REE_ENTRY_CHILD") == "1":
         print(json.dumps({"skip": infer["skip"]}))
         raise SystemExit(0)
     verify = call("ree_verify_receipt", {"receipt_path": str(receipt)})
+    if scenario == "fit":
+        from hermes_cli.plugins import _get_pre_tool_call_directive_details
+        for name, args in (
+            ("ree_infer", {"model": "facebook/opt-125m", "prompt": "Say yes.", "max_new_tokens": 4}),
+            ("ree_verify_receipt", {"receipt_path": str(receipt)}),
+        ):
+            details = _get_pre_tool_call_directive_details(name, args, session_id="fit", task_id="1")
+            if details.message:
+                asked.append(details.message)
     lines = (bindir / "calls.log").read_text().splitlines() if (bindir / "calls.log").exists() else []
     runs = [json.loads(line) for line in lines if json.loads(line)[:1] == ["run"]]
     huge = {}

@@ -101,12 +101,13 @@ bundle, save, or export that image. Doctor compares the local digest with
 `docker image inspect` and does not unpack the image. Pulling or using the
 image is the consent under the REE-Binary-License.
 
-`ree_verify_receipt` and `ree_infer` ask Hermes for approval on every call.
-The question is sent only when the full text fits. If it would be cut, nothing
-is sent and the tool fails. Cron, yolo, approvals off, single-query,
-unattended, host isolation, and a missing approval API are refused before
-re-execution or inference. Choosing always stores one config line and does
-not cover the next call.
+`ree_verify_receipt` and `ree_infer` ask through the `pre_tool_call` hook
+on every call a person can answer. The question is sent only when the full
+text fits. If it would be cut, nothing is sent and the tool fails. Cron,
+yolo, approvals off, single-query, unattended, host isolation, and a turn
+with nobody to answer are refused before re-execution or inference, including
+after always. Choosing always stores one config line and does not cover the
+next call.
 
 Official validate and official verify do not stand behind `text_output`,
 `finish_reason`, `token_count`, `model.name`, or `ree_version`. The plugin's

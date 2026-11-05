@@ -1,12 +1,48 @@
 from __future__ import annotations
-import importlib
+import hashlib
 import json
 import re
 import stat
 import time
 from pathlib import Path
+def _own(module):
+    if module == "contract":
+        if __package__:
+            from . import contract as loaded
+        else:
+            import contract as loaded
+    elif module == "docker":
+        if __package__:
+            from . import docker as loaded
+        else:
+            import docker as loaded
+    elif module == "gate":
+        if __package__:
+            from . import gate as loaded
+        else:
+            import gate as loaded
+    elif module == "capacity":
+        if __package__:
+            from . import capacity as loaded
+        else:
+            import capacity as loaded
+    elif module == "jsonio":
+        if __package__:
+            from . import jsonio as loaded
+        else:
+            import jsonio as loaded
+    elif module == "official":
+        if __package__:
+            from . import official as loaded
+        else:
+            import official as loaded
+    else:
+        raise ImportError(module)
+    return loaded
+
+
 def _bind(module, names):
-    loaded = importlib.import_module(((__package__ + ".") if __package__ else "") + module)
+    loaded = _own(module)
     globals().update({name: getattr(loaded, name) for name in names})
 _bind("contract", (
     "ARG_FIELDS", "COMPARE", "ERROR_TYPES", "HASH_FIELDS", "INFER_DEADLINE", "MODELS",
@@ -20,7 +56,7 @@ _bind("docker", (
     "make_cidfile", "make_tasks", "option_problem", "receipt_dir", "remove_tree",
     "run_named", "stage_receipt", "start_message", "validate_argv", "verify_argv",
 ))
-_bind("gate", ("DENIAL", "approve", "denial_kind"))
+_bind("gate", ("DENIAL", "approve", "asked", "denial_kind"))
 _bind("capacity", ("context_rejected", "prepare"))
 _bind("jsonio", ("parse_json",))
 _bind("official", ("log_disagrees", "read_validate"))
@@ -294,6 +330,48 @@ def _budget(raw, deadline):
     body["deadline_seconds"] = deadline
     body.setdefault("progress", "finished")
     return dump(body)
+def approval_ready(tool, args, runner=run_named):
+    try:
+        return _approval_ready(tool, args, runner)
+    except Exception:
+        return None
+def _approval_ready(tool, args, runner):
+    if tool == "ree_infer":
+        if entry_refusal(tool, args):
+            return None
+        model, count = args["model"], args["max_new_tokens"]
+        blocked, plan = _fit(tool, model)
+        if blocked:
+            return None
+        return {
+            "kind": "infer", "model": model, "max_new_tokens": count, "plan": plan, "receipt_hash": "",
+        }
+    if tool != "ree_verify_receipt":
+        return None
+    if entry_refusal(tool, args):
+        return None
+    payload, data, problem = _load(args["receipt_path"])
+    if problem:
+        return None
+    model = data["model"]["name"]
+    if context_rejected():
+        return None
+    try:
+        result, started = _official_validate(runner, payload)
+    except DockerError:
+        return None
+    if result.returncode == 137:
+        return None
+    blocked, _parsed = _gate(tool, result, started)
+    if blocked:
+        return None
+    blocked, plan = _fit(tool, model)
+    if blocked:
+        return None
+    return {
+        "kind": "verify", "model": model, "max_new_tokens": None, "plan": plan,
+        "receipt_hash": hashlib.sha256(payload).hexdigest(),
+    }
 def validate_receipt(args, runner=run_named):
     clock = time.monotonic()
     return _stamp(_validate(args, runner), clock, True)
@@ -314,17 +392,32 @@ def _validate(args, runner):
         "checks": parsed["checks"], "not_guaranteed": list(NOT_GUARANTEED),
         "next": dict(NEXT_VERIFY),
     })
-def verify_receipt(args, runner=run_named, approver=approve):
+def verify_receipt(args, runner=run_named, approver=approve, session_id="", task_id=""):
     clock = time.monotonic()
-    return _stamp(_verify(args, runner, approver), clock, True)
-def _verify(args, runner, approver):
+    return _stamp(_verify(args, runner, approver, session_id, task_id), clock, True)
+def _verify(args, runner, approver, session_id="", task_id=""):
     tool = "ree_verify_receipt"
     found = entry_refusal(tool, args)
     if found: return _typed(tool, found)
     payload, data, problem = _load(args["receipt_path"])
     if problem: return _bad_receipt(tool, data, problem)
     model = data["model"]["name"]
+    digest = hashlib.sha256(payload).hexdigest()
     if context_rejected(): return _typed(tool, _CTX_TYPE if context_rejected() == "wrong_type" else _CTX_BAD)
+    granted = False
+    _peek_blocked, peek_plan = _fit(tool, model)
+    if peek_plan is not None and asked(
+        "verify", model, machine=peek_plan["machine"], note=peek_plan["note"],
+        cpu_only=peek_plan["cpu_only"], session_id=session_id, task_id=task_id,
+        receipt_hash=digest,
+    ):
+        allowed, reason = approver(
+            "verify", model, machine=peek_plan["machine"], note=peek_plan["note"],
+            cpu_only=peek_plan["cpu_only"], session_id=session_id, task_id=task_id,
+            receipt_hash=digest,
+        )
+        if not allowed: return _denied(tool, reason)
+        granted = True
     limit = deadline_for(model)
     try:
         result, started = _official_validate(runner, payload)
@@ -334,10 +427,12 @@ def _verify(args, runner, approver):
     if blocked: return blocked
     blocked, plan = _fit(tool, model)
     if blocked: return blocked
-    allowed, reason = approver(
-        "verify", model, machine=plan["machine"], note=plan["note"], cpu_only=plan["cpu_only"],
-    )
-    if not allowed: return _denied(tool, reason)
+    if not granted:
+        allowed, reason = approver(
+            "verify", model, machine=plan["machine"], note=plan["note"], cpu_only=plan["cpu_only"],
+            session_id=session_id, task_id=task_id, receipt_hash=digest,
+        )
+        if not allowed: return _denied(tool, reason)
     staged = None
     try:
         staged = stage_receipt(payload)
@@ -351,10 +446,10 @@ def _verify(args, runner, approver):
     if not started: return _not_started(tool, plan["context"])
     if result.returncode == 137: return _killed(tool)
     return _budget(_from_verdict(tool, data, files, result), limit)
-def infer(args, runner=run_named, approver=approve):
+def infer(args, runner=run_named, approver=approve, session_id="", task_id=""):
     clock = time.monotonic()
-    return _stamp(_infer(args, runner, approver), clock)
-def _infer(args, runner, approver):
+    return _stamp(_infer(args, runner, approver, session_id, task_id), clock)
+def _infer(args, runner, approver, session_id="", task_id=""):
     tool = "ree_infer"
     found = entry_refusal(tool, args)
     if found:
@@ -369,6 +464,7 @@ def _infer(args, runner, approver):
     if blocked: return blocked
     allowed, reason = approver(
         "infer", model, count, machine=plan["machine"], note=plan["note"], cpu_only=plan["cpu_only"],
+        session_id=session_id, task_id=task_id, receipt_hash="",
     )
     if not allowed: return _denied(tool, reason)
     try:

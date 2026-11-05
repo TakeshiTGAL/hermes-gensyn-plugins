@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+Verify and infer ask through the `pre_tool_call` hook. Each call gets a new rule key, so choosing always does not cover the next call. Cron, a single-query run, webhook, msgraph_webhook, api_server, and the plugin host are refused by the plugin, including after always. Yolo, approvals off, and a turn with nobody to answer are refused before re-execution or inference. An inconsistent receipt does not ask.
+
 ## Unreleased
 
 Receipt checks follow the published REE receipt description.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+Delphi tool behavior is unchanged. This version is the same repository commit as hermes-gensyn-ree 0.1.1.
+
 ## Unreleased
 
 A recorded testnet page uses `fetchResponseStatus` `success` and `tradingFee`

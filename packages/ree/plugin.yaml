@@ -1,5 +1,5 @@
 name: hermes-gensyn-ree
-version: 0.1.0
+version: 0.1.1
 manifest_version: 2
 requires_hermes: ">=0.21.6"
 description: >-
@@ -18,10 +18,10 @@ description: >-
   pass a token in the environment. A token file already in
   ~/.cache/huggingface is visible to the container. The container network
   is not limited to Hugging Face. CPU runs can take minutes.
-  Those two tools ask approval every time. Cron, yolo,
-  approvals off, single-query, unattended, host isolation, a missing approval
-  API, or a question that would be cut are refused before re-execution or
-  inference. Validate
+  Those two tools ask approval every time through the pre_tool_call hook.
+  Cron, yolo, approvals off, single-query, unattended, host isolation,
+  a question that would be cut, or nobody to answer are refused before
+  re-execution or inference, including after always. Validate
   uses network none, does not ask, and does not return the receipt text.
   Every Hermes surface enables these tools
   by default, including gateways; a person admitted to a gateway can start
@@ -44,7 +44,9 @@ provides_tools:
   - ree_validate_receipt
   - ree_verify_receipt
   - ree_infer
-provides_hooks: []
+provides_hooks:
+  - pre_tool_call
+  - post_approval_response
 config_schema:
   docker_context:
     type: string

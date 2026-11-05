@@ -21,8 +21,9 @@ not redistribute or reimplement it.
 3. A `consistent` result includes `next`. Propose `ree_verify_receipt`.
    It has `needs_approval`. It checks re-execution and the text fields.
    Do not call it in the same turn. Call it only after the user agrees.
-4. `ree_verify_receipt` asks for approval, re-executes on CPU, and may
-   download weights. A model outside the three small names can be gigabytes,
+4. `ree_verify_receipt` asks for approval when a person can answer, re-executes on CPU, and may
+   download weights. Cron, `hermes -q`, and webhooks do not re-execute, even after always.
+   A model outside the three small names can be gigabytes,
    may not fit memory, and CPU-only can take a long time. Then compare the
    readable fields with the new receipt.
 5. Use `ree_infer` only when the user wants a new generation, not when they

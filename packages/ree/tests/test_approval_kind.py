@@ -12,7 +12,6 @@ if os.environ.get("REE_APPROVAL_CHILD") == "1":
     ROOT = Path(__file__).resolve().parents[1]
     try:
         import tools.approval as approval
-        import tools.approval_context as context
     except Exception as exc:
         print(json.dumps({"skip": str(exc)}))
         raise SystemExit(0)
@@ -24,11 +23,6 @@ if os.environ.get("REE_APPROVAL_CHILD") == "1":
     spec = importlib.util.spec_from_file_location("ree_plugin_tools", ROOT / "tools.py")
     plugin = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(plugin)
-    approval._yolo_active = lambda: False
-    context._is_cron_approval_context = lambda: False
-    context._get_approval_mode = lambda: "manual"
-    context._is_single_query_approval_context = lambda: False
-    context._is_unattended_platform_approval_context = lambda: False
     for name in ("HERMES_INTERACTIVE", "HERMES_GATEWAY_SESSION", "HERMES_PLUGIN_HOST_PROCESS"):
         os.environ.pop(name, None)
     no_human = (
@@ -44,15 +38,6 @@ if os.environ.get("REE_APPROVAL_CHILD") == "1":
     blocked = approval._blocked(no_human, pattern_key="k", description="d")
     constructors.append("outcome" not in blocked and gate.denial_kind(blocked) == "approval_unavailable")
     constructors.append(gate.denial_kind(approval._approved()) == "approval_unavailable")
-    seen = []
-    real = approval.request_tool_approval
-
-    def wrapped(tool_name, reason, rule_key="", approval_callback=None):
-        result = real(tool_name, reason, rule_key=rule_key, approval_callback=approval_callback)
-        seen.append({"outcome": result.get("outcome") if isinstance(result, dict) else None})
-        return result
-
-    approval.request_tool_approval = wrapped
     started = []
 
     def boom(argv, request, env, deadline, cwd=None):
@@ -102,7 +87,6 @@ if os.environ.get("REE_APPROVAL_CHILD") == "1":
         "constructors": constructors,
         "started": started,
         "names_same": before == after,
-        "seen": seen,
         "infer": infer.get("error_type"),
         "verify": verify.get("error_type"),
         "infer_retryable": infer.get("retryable"),
@@ -171,9 +155,6 @@ def test_noninteractive_entries_do_not_start_a_container():
     assert report["verify"] == "approval_unavailable"
     assert report["infer_retryable"] is False
     assert report["verify_retryable"] is False
-    assert len(report["seen"]) == 2
-    for result in report["seen"]:
-        assert result["outcome"] != "denied"
     for message in (report["infer_message"], report["verify_message"]):
         assert "said no" not in message
         assert "not obtained" in message

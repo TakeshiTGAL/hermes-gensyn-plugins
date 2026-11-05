@@ -84,12 +84,14 @@ check.
    - "Run facebook/opt-125m on CPU for 16 tokens: Will it rain in Tokyo tomorrow?"
      Expected after you approve: `level` is `inferred`, plus a receipt path.
 
-`ree_verify_receipt` and `ree_infer` ask every time. The question says a CPU
-run takes minutes. Choosing always stores one
+`ree_verify_receipt` and `ree_infer` ask every time a person can answer.
+The `pre_tool_call` hook returns the question, and Hermes asks. The question
+says a CPU run takes minutes. Choosing always stores one
 `config.yaml` line and does not cover the next call, because the rule key
-changes. `once` is not what Hermes stores. Cron, yolo, approvals off,
-single-query, unattended, host isolation, a missing approval API, and a
-question that would be cut are refused.
+changes. `once` is not what Hermes stores. Cron, `hermes -q`, webhook,
+msgraph_webhook, api_server, and the plugin host are refused by this plugin
+even after always. Yolo, approvals off, a turn with nobody to answer, host
+isolation, and a question that would be cut are refused.
 
 ## Tools
 

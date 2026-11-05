@@ -1,6 +1,6 @@
 [project]
 name = "hermes-gensyn-ree"
-version = "0.1.0"
+version = "0.1.1"
 description = "Three local REE receipt tools for Hermes Agent"
 readme = "README.md"
 license = { text = "MIT" }

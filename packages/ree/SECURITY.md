@@ -36,8 +36,8 @@ for approval and it does not download weights.
 
 ## Approval
 
-Verify and infer call Hermes `request_tool_approval` on every call. The
-question names the model and the destination. That is `docker_context`
+Verify and infer ask through the `pre_tool_call` hook on every call a person
+can answer. The question names the model and the destination. That is `docker_context`
 when set, otherwise `DOCKER_HOST` when set, otherwise the current context.
 It says the run is on CPU, that a cache token file is visible in the
 container, and that a timed-out container is removed on that machine. It does not include
@@ -49,11 +49,14 @@ fits. If it would be cut, or if it contains a newline or a backtick, nothing
 is sent and the tool fails.
 
 The tool also fails closed, without asking, when the caller is cron, yolo,
-approvals off, single-query, unattended, host isolation
-(`HERMES_PLUGIN_HOST_PROCESS=1`), or when the approval API cannot be loaded.
-Official validate runs before the approval question. An inconsistent receipt
-does not ask. A refused verify has already run official validate and does
-not re-execute. The refusal does not say that no container ran.
+approvals off, single-query, unattended (webhook, msgraph_webhook, api_server),
+or host isolation (`HERMES_PLUGIN_HOST_PROCESS=1`), including after always.
+A turn with nobody to answer is refused. A call that did not pass the hook
+does not re-execute. Official validate runs before the approval question.
+An inconsistent receipt does not ask. Cron, `hermes -q`, and those unattended
+sessions do not re-execute. A refusal after a consistent receipt has already
+run official validate when a person was the caller, and does not re-execute.
+The refusal does not say that no container ran.
 The plugin does not pass a token in the environment. A token file already in
 `~/.cache/huggingface` is visible to the container. Gated models are
 unsupported. The child environment is an allowlist and does not receive

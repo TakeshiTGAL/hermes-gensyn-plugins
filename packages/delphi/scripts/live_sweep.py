@@ -58,8 +58,10 @@ def main():
         return 1
     logging.disable(logging.CRITICAL)
     import model_tools
-    from hermes_cli.plugins import discover_plugins
-    discover_plugins()
+    from tools.registry import registry
+    if registry.get_entry("delphi_list_markets") is None:
+        print("sweep miss plugin did not load", file=sys.stderr)
+        return 1
     handle = model_tools.handle_function_call
     rows = 0
     failed = 0

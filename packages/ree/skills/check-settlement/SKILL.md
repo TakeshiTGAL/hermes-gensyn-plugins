@@ -36,7 +36,8 @@ continue. Do not trade. Do not send a dispute.
    `next`. Propose `ree_verify_receipt`. It has `needs_approval`. Do not call
    it in the same turn.
 5. If the user wants the text checked, call `ree_verify_receipt` with
-   `receipt_path`. It asks for approval every time and re-executes on CPU.
+   `receipt_path`. It asks for approval every time a person can answer, and re-executes on CPU.
+   Cron, hermes -q, and webhooks do not re-execute, even after always.
    `approval_denied` means approval was not granted. `approval_unavailable`
    means approval was not obtained (could not ask, or there was no answer).
    Both mean do not retry.
