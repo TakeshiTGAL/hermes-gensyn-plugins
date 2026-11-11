@@ -64,11 +64,11 @@ def _on_approval_response(**kwargs):
 def register(ctx):
     if __package__:
         from .capacity import remember
-        from .gate import bind_cron_reader
+        from .gate import bind_context
     else:
         from capacity import remember
-        from gate import bind_cron_reader
-    bind_cron_reader(getattr(ctx, "current_cron_execution", None))
+        from gate import bind_context
+    bind_context(ctx)
     remember(ctx)
     root = Path(__file__).resolve().parent
     for name, schema in SCHEMAS.items():

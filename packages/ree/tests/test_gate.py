@@ -16,7 +16,7 @@ def _quiet(monkeypatch):
     ):
         monkeypatch.delenv(name, raising=False)
     monkeypatch.setattr(gate, "_approvals_off", lambda: False)
-    monkeypatch.setattr(gate, "_cron_reader", lambda: None)
+    gate.bind_context(object())
     gate.clear_room("s", "t")
 
 
@@ -147,13 +147,29 @@ def test_missing_permit_fails_closed(monkeypatch):
     assert "not obtained" in message or "approval was not obtained" in message
 
 
-def test_cron_mark_and_unreadable_mark_block(monkeypatch):
+def test_public_cron_reader_present_missing_and_raising(monkeypatch):
     _quiet(monkeypatch)
-    monkeypatch.setattr(gate, "_cron_reader", lambda: (lambda: {"id": "job"}))
+
+    class Present:
+        @staticmethod
+        def current_cron_execution():
+            return {"id": "job"}
+
+    gate.bind_context(Present())
     assert gate.issue("verify", "facebook/opt-125m", session_id="s", task_id="t")["action"] == "block"
-    def boom():
-        raise RuntimeError("unread")
-    monkeypatch.setattr(gate, "_cron_reader", lambda: boom)
+
+    class Missing:
+        pass
+
+    gate.bind_context(Missing())
+    assert gate.issue("verify", "facebook/opt-125m", session_id="s", task_id="t")["action"] == "approve"
+
+    class Raising:
+        @staticmethod
+        def current_cron_execution():
+            raise RuntimeError("unread")
+
+    gate.bind_context(Raising())
     assert "could not be read" in gate.issue("verify", "facebook/opt-125m", session_id="s", task_id="t")["message"]
 
 

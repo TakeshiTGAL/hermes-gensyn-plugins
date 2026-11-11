@@ -1,8 +1,8 @@
-"""Run the two plugin suites in separate processes when both are requested.
+"""Run the two plugin suites in separate processes when both would load together.
 
 Each plugin imports top-level modules such as ``service``. One interpreter
-cannot hold both. ``pytest packages/delphi packages/ree`` starts one child
-per plugin. A run of a single plugin is unchanged.
+cannot hold both. ``pytest`` at this repo, and ``pytest packages/delphi
+packages/ree``, start one child per plugin. A run of a single plugin is unchanged.
 """
 from __future__ import annotations
 
@@ -28,7 +28,9 @@ def pytest_cmdline_main(config):
     if os.environ.get(_CHILD):
         return None
     args = [str(arg) for arg in config.args]
-    if not (_named(args, "packages/delphi") and _named(args, "packages/ree")):
+    delphi = _named(args, "packages/delphi")
+    ree = _named(args, "packages/ree")
+    if delphi != ree:
         return None
     env = os.environ.copy()
     env[_CHILD] = "1"

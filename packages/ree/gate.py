@@ -19,14 +19,14 @@ _PERMITS = {}
 _PENDING = {}
 _GRANTS = frozenset({"once", "session", "always"})
 _RULE_PREFIX = "plugin_rule:"
-_CRON_READER = None
+_CTX = None
 def reason_fits(text):
     if "\n" in text or "`" in text or len(text) > REASON_BUDGET: return False
     escaped = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     return len(escaped) <= REASON_BUDGET
-def bind_cron_reader(reader):
-    global _CRON_READER
-    _CRON_READER = reader if callable(reader) else None
+def bind_context(ctx):
+    global _CTX
+    _CTX = ctx
 def _context_values(name):
     try:
         current = contextvars.copy_context()
@@ -57,14 +57,10 @@ def session_flag(name):
 def _flag_on(name):
     return session_flag(name).strip().lower() in _TRUTHY
 def _cron_reader():
-    reader = _CRON_READER
-    if reader is not None:
+    reader = getattr(_CTX, "current_cron_execution", None)
+    if callable(reader):
         return reader
-    try:
-        from cron.execution_identity import current_cron_execution as reader
-    except Exception:
-        return None
-    return reader
+    return None
 def _config_path():
     home = os.environ.get("HERMES_HOME", "").strip()
     if home:
