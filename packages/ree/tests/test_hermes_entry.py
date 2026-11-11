@@ -36,7 +36,9 @@ if os.environ.get("REE_ENTRY_CHILD") == "1":
     elif scenario == "unattended":
         extra["HERMES_SESSION_PLATFORM"] = "api_server"
     import yaml
-    plugins = {"enabled": ["hermes-gensyn-ree"]}
+    # This home only. 0 waits for register(); the default 10s deadline drops the
+    # tools when the machine is busy, and the approval checks never run.
+    plugins = {"enabled": ["hermes-gensyn-ree"], "load_timeout_seconds": 0}
     if scenario == "fit":
         plugins["entries"] = {
             "hermes-gensyn-ree": {"settings": {"docker_context": "box1", "use_gpu": False}},
@@ -182,8 +184,7 @@ def test_closed_contexts_do_not_reexecute():
         )
         assert proc.returncode == 0, proc.stderr[-2000:]
         report = json.loads(proc.stdout)
-        if report.get("skip"):
-            pytest.skip(report["skip"])
+        assert not report.get("skip"), report
         assert report["infer"] == "approval_unavailable", report
         assert report["infer_runs"] == 0, report
         assert report["verify"] == "approval_unavailable", report
@@ -200,8 +201,7 @@ def test_entry_names_the_context_and_stops_a_large_model():
     )
     assert proc.returncode == 0, proc.stderr[-2000:]
     report = json.loads(proc.stdout)
-    if report.get("skip"):
-        pytest.skip(report["skip"])
+    assert not report.get("skip"), report
     assert report["infer_runs"] == 0, report
     assert report["verify_runs"] == 0, report
     assert report["huge"] == "insufficient_memory", report

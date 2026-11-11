@@ -25,7 +25,7 @@ jobs:
         working-directory: packages/delphi
         run: npm ci --ignore-scripts
       - name: Python offline tests
-        run: python -m pytest packages/delphi/tests -q --ignore=packages/delphi/tests/test_live.py
+        run: python -m pytest packages/delphi/tests -q
       - name: Node bridge tests
         run: npm --prefix packages/delphi test
 

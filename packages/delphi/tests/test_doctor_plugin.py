@@ -69,7 +69,10 @@ def good_runner(argv, request, env, deadline):
     return ChildResult(0, b"v20.18.0\n", b"")
 
 
-def test_doctor_is_offline_and_healthy_with_required_configuration(monkeypatch):
+def test_doctor_is_offline_and_healthy_with_required_configuration(monkeypatch, tmp_path):
+    package = tmp_path / "package.json"
+    package.write_text('{"version": "2.1.0"}\n')
+    monkeypatch.setattr(doctor, "PACKAGE_JSON", package)
     monkeypatch.setenv("DELPHI_API_ACCESS_KEY", "SECRET-MARKER")
     monkeypatch.setenv("DELPHI_NETWORK", "testnet")
     monkeypatch.setenv("DELPHI_WALLET_ADDRESS", "0x" + "ab" * 20)
@@ -150,6 +153,17 @@ def test_invalid_scope_does_not_blame_the_process_environment(monkeypatch):
         assert not body["message"].startswith(setting)
     assert result["api_key"]["status"] == "error"
     assert "from-env" not in json.dumps(result)
+
+
+def test_doctor_reports_a_missing_sdk_package(monkeypatch, tmp_path):
+    monkeypatch.setattr(doctor, "PACKAGE_JSON", tmp_path / "missing.json")
+    monkeypatch.setenv("DELPHI_API_ACCESS_KEY", "configured")
+    monkeypatch.setenv("DELPHI_NETWORK", "testnet")
+    monkeypatch.setenv("DELPHI_WALLET_ADDRESS", "0x" + "ab" * 20)
+    result = doctor.run_doctor(runner=good_runner, node_path="/fake/node")
+    assert result["sdk"]["status"] == "error"
+    assert result["sdk"]["installed"] is None
+    assert result["overall"] == "error"
 
 
 def test_doctor_rejects_sdk_version_mismatch(monkeypatch):

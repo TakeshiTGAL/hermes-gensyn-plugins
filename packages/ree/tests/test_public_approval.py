@@ -27,7 +27,11 @@ if os.environ.get("REE_PUBLIC_CHILD") == "1":
     os.environ["HERMES_INTERACTIVE"] = "1"
     os.environ["PATH"] = str(bindir) + ":/usr/bin:/bin"
     os.environ.pop("DOCKER_HOST", None)
-    (home / "config.yaml").write_text("plugins:\n  enabled:\n    - hermes-gensyn-ree\n")
+    # This home only. Hermes's default load deadline is 10s; a busy machine
+    # abandons register() and the tools never appear. 0 waits until load finishes.
+    (home / "config.yaml").write_text(
+        "plugins:\n  enabled:\n    - hermes-gensyn-ree\n  load_timeout_seconds: 0\n"
+    )
     shutil.copytree(
         root, home / "plugins" / "hermes-gensyn-ree",
         ignore=shutil.ignore_patterns("tests", "__pycache__", "*.pyc"),
@@ -51,6 +55,7 @@ if os.environ.get("REE_PUBLIC_CHILD") == "1":
         _dispatch_pre_tool_call_hooks,
         _get_pre_tool_call_directive_details,
         discover_plugins,
+        get_plugin_manager,
     )
     from tools.registry import registry
     from tools.terminal_tool import set_approval_callback
@@ -85,7 +90,15 @@ if os.environ.get("REE_PUBLIC_CHILD") == "1":
     report = {"error": "", "cases": {}}
     try:
         if registry.get_entry("ree_infer") is None or registry.get_entry("ree_verify_receipt") is None:
+            errors = {}
+            try:
+                for key, loaded in get_plugin_manager()._plugins.items():
+                    if getattr(loaded, "error", None):
+                        errors[str(key)] = str(loaded.error)[:500]
+            except Exception as exc:
+                errors["lookup"] = type(exc).__name__
             report["error"] = "plugin tools did not load"
+            report["load_errors"] = errors
             print(json.dumps(report))
             raise SystemExit(0)
         details = _get_pre_tool_call_directive_details(

@@ -34,10 +34,22 @@ def pytest_cmdline_main(config):
         return None
     env = os.environ.copy()
     env[_CHILD] = "1"
+    forwarded = []
+    args = [str(arg) for arg in config.invocation_params.args]
+    index = 0
+    while index < len(args):
+        arg = args[index]
+        if arg == "-p" and index + 1 < len(args):
+            forwarded.extend([arg, args[index + 1]])
+            index += 2
+            continue
+        if arg.startswith("-p"):
+            forwarded.append(arg)
+        index += 1
     code = 0
     for folder in ("packages/delphi", "packages/ree"):
         result = subprocess.call(
-            [sys.executable, "-m", "pytest", "-q", folder],
+            [sys.executable, "-m", "pytest", "-q", *forwarded, folder],
             cwd=ROOT,
             env=env,
         )

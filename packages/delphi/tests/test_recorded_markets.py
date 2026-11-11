@@ -7,8 +7,6 @@ from pathlib import Path
 
 import pytest
 
-import re
-
 from service import NULL_PAGES, dispatch
 from tests.support import ADDRESS, WALLET, failure, success
 
@@ -90,16 +88,14 @@ def test_missing_api_market_is_not_found(monkeypatch):
     assert ADDRESS not in text
 
 
-def _sdk_null_lists():
-    root = FIXTURE.parents[1].parent / "node_modules" / "@gensyn-ai" / "gensyn-delphi-sdk" / "dist"
-    found = set()
-    for path in root.rglob("*.d.ts"):
-        found.update(re.findall(r"(\w+):\s*\w+\[\]\s*\|\s*null", path.read_text()))
-    return found
-
-
 def test_null_page_table_matches_the_sdk():
-    assert _sdk_null_lists() == set(NULL_PAGES)
+    from tests.sdk_shape import live_types_text, null_names, recorded_text
+
+    recorded = null_names(recorded_text())
+    live = live_types_text()
+    if live is not None:
+        assert null_names(live) == recorded
+    assert recorded == set(NULL_PAGES)
 
 
 @pytest.mark.parametrize("key", sorted(NULL_PAGES))

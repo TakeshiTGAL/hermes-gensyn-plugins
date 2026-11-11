@@ -1,70 +1,40 @@
-"""One keyless testnet quote through the tool entry. Skip when offline."""
-
+"""Quote results on the public contract. No network."""
 from __future__ import annotations
 
 import json
-import urllib.error
-import urllib.request
-
-import pytest
 
 from service import dispatch
+from tests.support import ADDRESS, FakeBridge, failure, success
 
-SUBGRAPH = (
-    "https://api.goldsky.com/api/public/project_cmnoqdag1obop01z3efnu8ssq/"
-    "subgraphs/delphi-testnet-autoset/1.0.0/gn"
-)
 SETTLED = "0xa29c81fc97397f7036cb277e01f6bbbe371d08a5"
-QUERY = "{ gatewayBuys(first: 8, orderBy: timestamp_, orderDirection: desc) { marketProxy } }"
+OPEN = {"market_address": ADDRESS, "outcome_idx": 0, "shares": "1"}
+SETTLED_ARGS = {"market_address": SETTLED, "outcome_idx": 0, "shares": "1"}
 
 
-def _buys():
-    request = urllib.request.Request(
-        SUBGRAPH,
-        data=json.dumps({"query": QUERY}).encode(),
-        headers={
-            "content-type": "application/json",
-            "user-agent": "hermes-gensyn-delphi-live-check",
-        },
+def _quote(monkeypatch, args, reply):
+    monkeypatch.setenv("DELPHI_API_ACCESS_KEY", "test-api-key")
+    monkeypatch.setenv("DELPHI_NETWORK", "testnet")
+    bridge = FakeBridge([reply])
+    text = dispatch(
+        "delphi_quote_buy", args, caller=bridge, reserve_fn=lambda count: count <= 30,
     )
-    with urllib.request.urlopen(request, timeout=20) as response:
-        page = json.load(response)
-    return page["data"]["gatewayBuys"]
+    return json.loads(text), bridge
 
 
-def _quote(address):
-    return json.loads(
-        dispatch(
-            "delphi_quote_buy",
-            {"market_address": address, "outcome_idx": 0, "shares": "1"},
-        )
+def test_quotable_amount_and_settled_market_stay_offline(monkeypatch):
+    opened, bridge = _quote(
+        monkeypatch,
+        OPEN,
+        success({"amount_raw": "1000", "decimals": {"status": "known", "value": 18}}),
     )
-
-
-def test_testnet_quote_and_settled_market():
-    try:
-        buys = _buys()
-    except (urllib.error.URLError, TimeoutError, OSError, KeyError, json.JSONDecodeError) as exc:
-        pytest.skip(f"testnet subgraph unavailable: {exc}")
-    opened = None
-    for buy in buys:
-        address = str(buy.get("marketProxy", ""))
-        if not address.startswith("0x") or address.lower() == SETTLED:
-            continue
-        try:
-            body = _quote(address)
-        except OSError as exc:
-            pytest.skip(f"testnet quote unavailable: {exc}")
-        if body.get("ok") is True and str(body.get("amount_raw", "")).isdigit():
-            opened = body
-            opened["market_address"] = address
-            break
-    if opened is None:
-        pytest.skip("no open testnet market returned a quote")
-    try:
-        settled = _quote(SETTLED)
-    except OSError as exc:
-        pytest.skip(f"settled quote unavailable: {exc}")
-    assert opened["amount_raw"]
+    assert opened["ok"] is True
+    assert str(opened["amount_raw"]).isdigit()
+    assert bridge.calls and bridge.calls[0][0] == "quote_buy"
+    settled, settled_bridge = _quote(
+        monkeypatch,
+        SETTLED_ARGS,
+        failure("market_not_quotable", "execution reverted", outbound=1),
+    )
     assert settled["ok"] is False
     assert settled["error_type"] == "market_not_quotable"
+    assert settled_bridge.calls[0][1]["market_address"] == SETTLED

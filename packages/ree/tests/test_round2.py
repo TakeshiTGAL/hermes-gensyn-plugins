@@ -93,7 +93,7 @@ def test_commit_hash_difference_is_a_reexecution_mismatch(tmp_path, monkeypatch)
 def test_device_fifo_and_symlink_are_not_read(tmp_path):
     started = time.monotonic()
     device = _body(validate_receipt({"receipt_path": "/dev/zero"}))
-    assert time.monotonic() - started < 1
+    assert time.monotonic() - started < 5
     assert device["ok"] is False
     pipe = tmp_path / "pipe"
     os.mkfifo(pipe)

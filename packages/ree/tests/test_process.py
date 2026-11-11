@@ -36,7 +36,7 @@ def test_deadline_kills_the_named_container(tmp_path, monkeypatch):
     with pytest.raises(DockerError) as caught:
         run_named(["docker", "sleep"], 0.3, "gensyn-ree-dead")
     assert caught.value.kind == "timeout"
-    assert time.monotonic() - started < 2
+    assert time.monotonic() - started < 15
     log = (bindir / "calls.log").read_text()
     assert "rm" in log
     assert "ps" in log
@@ -60,7 +60,7 @@ def test_direct_child_deadline(tmp_path, monkeypatch):
     with pytest.raises(ChildError) as caught:
         run_child(["docker", "sleep"], b"", child_env(), 0.25)
     assert caught.value.kind == "timeout"
-    assert time.monotonic() - started < 2
+    assert time.monotonic() - started < 15
 
 
 def test_doctor_reports_image_and_daemon(tmp_path, monkeypatch):

@@ -6,6 +6,7 @@ import random
 import re
 import string
 import subprocess
+import tempfile
 from pathlib import Path
 
 from service import egress
@@ -67,6 +68,52 @@ def cases():
     return built
 
 
+def _node_holds_secret(script, payload):
+    """Run holdsSecret from bridge.mjs.
+
+    The bridge imports the SDK at load time. That package is gitignored, so a
+    clean archive has nothing for Node to resolve. holdsSecret does not use
+    the SDK classes; a stub satisfies the import and the real function runs.
+    """
+    with tempfile.TemporaryDirectory(prefix="delphi-holds-") as folder:
+        tmp = Path(folder)
+        stub = tmp / "stub.mjs"
+        stub.write_text("export class DelphiClient {}\nexport class SubgraphClient {}\n")
+        loader = tmp / "loader.mjs"
+        loader.write_text(
+            "export async function resolve(specifier, context, nextResolve) {\n"
+            "  if (specifier === '@gensyn-ai/gensyn-delphi-sdk') {\n"
+            f"    return {{ url: {json.dumps(stub.as_uri())}, shortCircuit: true }};\n"
+            "  }\n"
+            "  return nextResolve(specifier, context);\n"
+            "}\n"
+        )
+        register = tmp / "register.mjs"
+        register.write_text(
+            "import * as nodeModule from 'node:module';\n"
+            f"const loader = {json.dumps(loader.as_uri())};\n"
+            f"const stub = {json.dumps(stub.as_uri())};\n"
+            "if (typeof nodeModule.registerHooks === 'function') {\n"
+            "  nodeModule.registerHooks({\n"
+            "    resolve(specifier, context, nextResolve) {\n"
+            "      if (specifier === '@gensyn-ai/gensyn-delphi-sdk') {\n"
+            "        return { url: stub, shortCircuit: true };\n"
+            "      }\n"
+            "      return nextResolve(specifier, context);\n"
+            "    },\n"
+            "  });\n"
+            "} else {\n"
+            "  nodeModule.register(loader, import.meta.url);\n"
+            "}\n"
+        )
+        return subprocess.run(
+            ["node", "--import", str(register), "--input-type=module", "-e", script],
+            input=payload,
+            capture_output=True,
+            check=False,
+        )
+
+
 def ask_bridge(rows):
     script = (
         "import { readFileSync } from 'node:fs';\n"
@@ -75,12 +122,7 @@ def ask_bridge(rows):
         "const out = cases.map((item) => holdsSecret(item.text, item.secret));\n"
         "process.stdout.write(JSON.stringify(out));\n"
     )
-    done = subprocess.run(
-        ["node", "--input-type=module", "-e", script],
-        input=json.dumps(rows).encode(),
-        capture_output=True,
-        check=False,
-    )
+    done = _node_holds_secret(script, json.dumps(rows).encode())
     assert done.returncode == 0, done.stderr.decode()[-500:]
     return json.loads(done.stdout)
 

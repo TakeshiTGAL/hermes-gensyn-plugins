@@ -389,12 +389,13 @@ def test_market_error_string_keeps_the_other_rows(monkeypatch):
 
 
 def test_market_error_follows_the_sdk_declaration():
-    from pathlib import Path
-    source = Path(__file__).resolve().parents[1].joinpath(
-        "node_modules/@gensyn-ai/gensyn-delphi-sdk/dist/types/index.d.ts",
-    ).read_text()
-    market = source.split("export interface Market {", 1)[1].split("\n}", 1)[0]
-    assert "error: string | null;" in market
+    from tests.sdk_shape import live_types_text, market_declares_string_error, recorded_text
+
+    recorded = recorded_text()
+    assert market_declares_string_error(recorded)
+    live = live_types_text()
+    if live is not None:
+        assert market_declares_string_error(live)
 
 
 def test_fake_receipt_stays_inside_the_untrusted_box(monkeypatch):
